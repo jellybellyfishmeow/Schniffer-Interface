@@ -1,16 +1,27 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import { HashRouter as Router, Switch, Route} from 'react-router-dom';
+import constants from "./Components/constants";
+
+import DashboardActivity from "./Components/DashboardActivity";
+import LogInActivity from "./Components/LoginActivity";
+import SignUpActivity from "./Components/SignUpActivity";
+import NetworkMap from "./Components/NetworkMap";
+
+
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <Router>
+          <Switch>
+            <Route exact path={constants.routes.dashboard} component={DashboardActivity}/>
+            <Route path={constants.routes.logIn} component={LogInActivity}/>
+            <Route path={constants.routes.signUp} component={SignUpActivity}/>
+            <Route path={constants.routes.networkMap} component={NetworkMap}/>
+          </Switch>
+        </Router>
       </div>
     );
   }
