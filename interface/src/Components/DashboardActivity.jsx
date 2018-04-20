@@ -3,6 +3,9 @@ import { Table, Image} from 'react-bootstrap';
 import {Link, Redirect} from "react-router-dom";
 import constants from "./constants";
 import firebase from "firebase/app";
+import DChart from "./Chart";
+import {Doughnut} from 'react-chartjs-2';
+
 
 export default class DashboardActivity extends React.Component {
     constructor(props) {
@@ -13,6 +16,7 @@ export default class DashboardActivity extends React.Component {
             authenticated: firebase.auth().currentUser != null
         }
     }
+    
     render() {
         let style = {
             position: "absolute",
@@ -23,6 +27,7 @@ export default class DashboardActivity extends React.Component {
             left: "0"
         }
         return (
+          
             <div>
                 <div className="p-2 pl-3 d-flex justify-content-end">
                   <button className="mr-auto p-2 btn logo" onClick={() => {this.props.history.push("/")}}><Image src="./sniff.png" height="100" width="100" /></button>
@@ -30,7 +35,7 @@ export default class DashboardActivity extends React.Component {
                   <button className="btn log" onClick={() => {this.props.history.push("/login")}}>log in</button>
                   <button className="btn log" onClick={() => {this.props.history.push("/signup")}}>sign up</button>
                 </div>
-                <div id="" className="sidebar">
+                <div id="" className="sidebar" >
                   <div className="sidebar-wrapper">
                     <ul className="bs-docs-sidebar-holder col-md-3">
                       <li className="bs-docs-sidenav nav" role="presentation">
@@ -44,7 +49,15 @@ export default class DashboardActivity extends React.Component {
                     </ul>
                   </div>
                 </div>
+
+
                 <div className="cont d-flex justify-content-center" style={style}>
+                {/* 
+                not working :(
+                  <hr />
+			          	  <DChart />
+                  <hr />
+                */}
                     <div className="card align-self-center">
                       <Table striped bordered condensed hover>
                           <thead>

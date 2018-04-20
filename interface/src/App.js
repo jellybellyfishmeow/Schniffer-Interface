@@ -3,7 +3,7 @@ import './App.css';
 
 import { HashRouter as Router, Switch, Route} from 'react-router-dom';
 import constants from "./Components/constants";
-
+import DoughnutExample from './Components/Chart';
 import DashboardActivity from "./Components/DashboardActivity";
 import LogInActivity from "./Components/LoginActivity";
 import SignUpActivity from "./Components/SignUpActivity";
