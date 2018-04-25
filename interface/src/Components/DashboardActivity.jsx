@@ -4,7 +4,10 @@ import {Link, Redirect} from "react-router-dom";
 import constants from "./constants";
 import firebase from "firebase/app";
 import DChart from "./Chart";
-
+import SpeedTest from "./SpeedTest";
+import NetworkUsage from "./NetworkUsage";
+import JsonTable from "ts-react-json-table";
+//https://github.com/agracio/ts-react-json-table
 
 export default class DashboardActivity extends React.Component {
     constructor(props) {
@@ -42,7 +45,10 @@ export default class DashboardActivity extends React.Component {
                         <button className="btn log" onClick={() => {this.props.history.push("/networkMap")}}>Network Map</button>
                       </li>
                       <li className="bs-docs-sidenav nav">
-                        <button className="btn log" onClick={() => {this.props.history.push("/")}}>Speed Test</button>
+                        <button className="btn log" onClick={() => {this.props.history.push("/SpeedTest")}}>Speed Test</button>
+                      </li>
+                      <li className="bs-docs-sidenav nav">
+                        <button className="btn log" onClick={() => {this.props.history.push("/NetworkUsage")}}>Network Usage</button>
                       </li>
                     </ul>
                   </div>
@@ -53,7 +59,7 @@ export default class DashboardActivity extends React.Component {
             
                     <div className="card align-self-center">
                       <hr />
-                      <DChart />
+                      <NetworkUsage />
                       <hr />
                       <Table striped bordered condensed hover>
                           <thead>
@@ -85,6 +91,9 @@ export default class DashboardActivity extends React.Component {
                           </tr>
                           </tbody>
                         </Table>
+                        <hr />
+                          <DChart />
+                        <hr />
                       </div>
                   </div>
             </div>

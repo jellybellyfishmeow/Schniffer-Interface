@@ -11,9 +11,11 @@
     "react-chartjs-2": "^2.7.0",
     "react-dom": "^16.3.2",
     "react-google-charts": "^1.5.7",
+    "react-googlecharts": "^1.4.0",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "ts-react-json-table": "^0.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
