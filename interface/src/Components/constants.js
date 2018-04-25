@@ -3,6 +3,6 @@ export default {
         dashboard: "/",
         logIn: "/login",
         signUp: "/signup",
-        networkMap: "/favorites"
+        networkMap: "/NetworkMap"
     }
 }

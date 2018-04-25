@@ -1,36 +1,41 @@
 import React from "react";
 import constants from "./constants";
-import DoughnutChart from "react-chartjs-2";
+import { Chart } from 'react-google-charts';
 
 
 export default class DChart extends React.Component {
-	
-	render(){
-		let data = {
-			labels: [
-				'iPhone 1',
-				'POS computer',
-				'Jenny\'s macbook'
-			],
-			datasets: [{
-				data: [300, 50, 100],
-				backgroundColor: [
-				'#FF6384',
-				'#36A2EB',
-				'#FFCE56'
-				],
-				hoverBackgroundColor: [
-				'#FF6384',
-				'#36A2EB',
-				'#FFCE56'
-				]
-			}]
+	constructor(props) {
+		super(props);
+		this.state = {
+		  options: {
+			title: 'Age vs. Weight comparison',
+			hAxis: { title: 'Age', minValue: 0, maxValue: 15 },
+			vAxis: { title: 'Weight', minValue: 0, maxValue: 15 },
+			legend: 'none',
+		  },
+		  data: [
+			['Age', 'Weight'],
+			[8, 12],
+			[4, 5.5],
+			[11, 14],
+			[4, 5],
+			[3, 3.5],
+			[6.5, 7],
+		  ],
 		};
-		 return(
-			<div>
-				<h2>Network Usage</h2>
-				<DoughnutChart data={data} />
-			</div>
-			)
-	 }
+	  }
+	  render() {
+		return (
+		  <Chart
+			chartType="ScatterChart"
+			data={this.state.data}
+			options={this.state.options}
+			graph_id="ScatterChart"
+			width="100%"
+			height="400px"
+			legend_toggle
+		  />
+		);
+	  }
 }
+

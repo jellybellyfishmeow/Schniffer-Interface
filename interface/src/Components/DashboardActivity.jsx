@@ -4,16 +4,13 @@ import {Link, Redirect} from "react-router-dom";
 import constants from "./constants";
 import firebase from "firebase/app";
 import DChart from "./Chart";
-import {Doughnut} from 'react-chartjs-2';
 
 
 export default class DashboardActivity extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: "",
-            password: "",
-            authenticated: firebase.auth().currentUser != null
+            
         }
     }
     
@@ -38,27 +35,26 @@ export default class DashboardActivity extends React.Component {
                 <div id="" className="sidebar" >
                   <div className="sidebar-wrapper">
                     <ul className="bs-docs-sidebar-holder col-md-3">
-                      <li className="bs-docs-sidenav nav" role="presentation">
-                        <a href="./DashboardActivity/">Home</a>
+                      <li className="bs-docs-sidenav nav">
+                        <button className="btn log" onClick={() => {this.props.history.push("/")}}>Dashboard</button>
                       </li>
                       <li className="bs-docs-sidenav nav">
-                        <a href="./NetworkMap/">Network Map</a>
+                        <button className="btn log" onClick={() => {this.props.history.push("/networkMap")}}>Network Map</button>
                       </li>
-                      <li className="bs-docs-sidenav nav">Manage Guests</li>
-                      <li className="bs-docs-sidenav nav">Security Alerts</li>
+                      <li className="bs-docs-sidenav nav">
+                        <button className="btn log" onClick={() => {this.props.history.push("/")}}>Speed Test</button>
+                      </li>
                     </ul>
                   </div>
                 </div>
 
 
-                <div className="cont d-flex justify-content-center" style={style}>
-                {/* 
-                not working :(
-                  <hr />
-			          	  <DChart />
-                  <hr />
-                */}
+                <div className="cont d-flex justify-content-center" style={style}>              
+            
                     <div className="card align-self-center">
+                      <hr />
+                      <DChart />
+                      <hr />
                       <Table striped bordered condensed hover>
                           <thead>
                           <tr>
