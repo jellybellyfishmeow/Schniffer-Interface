@@ -30,7 +30,7 @@ const Nav = () => (
                 </li>
 
                 <li className="bs-docs-sidenav nav">
-                <button className="btn log"><Link to='/example'>Exampls</Link></button>
+                <button className="btn log"><Link to='/example'>Example</Link></button>
                 </li>
             </ul>
             </div>

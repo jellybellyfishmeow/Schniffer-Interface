@@ -8,13 +8,13 @@ export default class NetworkMap extends React.Component {
 		super(props);
 		this.state = {
 		  options: {
-			title: 'Age vs. Weight comparison',
+			title: 'Network Map,
 			hAxis: { title: 'Age', minValue: 0, maxValue: 15 },
 			vAxis: { title: 'Weight', minValue: 0, maxValue: 15 },
 			legend: 'none',
 		  },
 		  data: [
-			['MEOW', 'Weight'],
+			['sample', 'sample'],
 			[8, 12],
 			[4, 5.5],
 			[11, 14],
