@@ -4,6 +4,8 @@ export default {
         logIn: "/login",
         signUp: "/signup",
         networkMap: "/NetworkMap",
-        SpeedTest: "/SpeedTest"
+        SpeedTest: "/SpeedTest",
+        networkUsage: "/NetworkUsage",
+
     }
 }
