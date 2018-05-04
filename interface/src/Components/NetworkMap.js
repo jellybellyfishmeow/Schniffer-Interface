@@ -8,7 +8,7 @@ export default class NetworkMap extends React.Component {
 		super(props);
 		this.state = {
 		  options: {
-			title: 'Network Map,
+			title: 'Network Map',
 			hAxis: { title: 'Age', minValue: 0, maxValue: 15 },
 			vAxis: { title: 'Weight', minValue: 0, maxValue: 15 },
 			legend: 'none',
