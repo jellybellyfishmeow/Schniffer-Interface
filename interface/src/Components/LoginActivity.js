@@ -21,7 +21,6 @@ export default class LoginActivity extends React.Component {
                      this.setState({
                          authenticated: true,
                      });
-                     //this.props.history.push(constants.routes.main);
                  })
                  .catch((err) => {
                      alert(err.message);
