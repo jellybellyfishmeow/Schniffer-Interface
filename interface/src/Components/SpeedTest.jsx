@@ -1,5 +1,4 @@
 import React from "react";
-import constants from "./constants";
 import { Chart } from 'react-google-charts';
 
 

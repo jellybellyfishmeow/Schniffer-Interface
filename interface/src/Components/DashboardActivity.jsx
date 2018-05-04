@@ -1,7 +1,6 @@
 import React from "react";
 import { Table, Image} from 'react-bootstrap';
 import {Link, Redirect} from "react-router-dom";
-import constants from "./constants";
 import firebase from "firebase/app";
 import DChart from "./Chart";
 import SpeedTest from "./SpeedTest";

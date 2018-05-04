@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, Redirect } from 'react-router-dom';
-import constants from "./constants";
 import firebase from "firebase/app";
 
 export default class SignUpActivity extends React.Component {
@@ -36,7 +35,6 @@ export default class SignUpActivity extends React.Component {
                         displayName: this.state.displayName,
                     }).then(() => {
                         this.setState({authenticated: true});
-                        this.props.history.push(constants.routes.home);
                     }).then(() => {
                       // add user to database for future Favorites
                       firebase.database().ref("users").child(user.uid).set({
@@ -116,7 +114,7 @@ export default class SignUpActivity extends React.Component {
                             </form>
 
                             {/* Give the option to Sign into existing account. */}
-                            <p>Already have an account? <Link to={constants.routes.logIn}>Sign in!</Link></p>
+                            <p>Already have an account? <Link to='/login'>Sign in!</Link></p>
                         </div>
                     </div>
                 </div>

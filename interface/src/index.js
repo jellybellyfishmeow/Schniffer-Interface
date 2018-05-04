@@ -1,6 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import DashboardActivity from "./Components/DashboardActivity";
+import LogInActivity from "./Components/LoginActivity";
+import SignUpActivity from "./Components/SignUpActivity";
+import NetworkMap from "./Components/NetworkMap";
+import SpeedTest from './Components/SpeedTest';
+import NetworkUsage from './Components/NetworkUsage';
+import List from './Components/example';
 
 import './index.css';
 import App from './App';
@@ -21,8 +28,18 @@ var config = {
   firebase.initializeApp(config);
 
   ReactDOM.render((
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <Router>
+      <div>
+        <App />
+        <Route exact path='/' component={DashboardActivity}/>
+          <Route path='/login' component={LogInActivity}/>
+          <Route path='/signup' component={SignUpActivity}/>
+          <Route path='/networkMap' component={NetworkMap}/>
+          <Route path='/networkUsage' component={NetworkUsage}/>
+          <Route path='speedTest' component={SpeedTest}/>
+          <Route path='example' component={List}/>
+
+      </div>    
+    </Router>
   ), document.getElementById('root'))
   registerServiceWorker();

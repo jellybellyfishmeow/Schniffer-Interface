@@ -16,19 +16,21 @@ const Nav = () => (
             <div className="sidebar-wrapper">
             <ul className="bs-docs-sidebar-holder col-md-3">
                 <li className="bs-docs-sidenav nav">
-                <button className="btn log" onClick={() => {this.props.history.push("/")}}>Dashboard</button>
+                <button className="btn log"><Link to='/'>Dashboard</Link></button>
                 </li>
                 <li className="bs-docs-sidenav nav">
-                <button className="btn log" onClick={() => {this.props.history.push("/networkMap")}}>Network Map</button>
+                <Link to='/networkMap'>Network Map</Link>
                 </li>
                 <li className="bs-docs-sidenav nav">
-                <button className="btn log" onClick={() => {this.props.history.push("/SpeedTest")}}>Speed Test</button>
+                <button className="btn log"><Link to='/speedTest'>SpeedTest</Link></button>
                 </li>
                 <li className="bs-docs-sidenav nav">
-                <Link to='/NetworkUsage'>
-                <button className="btn log">Network Usage
+                <button className="btn log"><Link to='/networkUsage'>Network Usage</Link>
                 </button>                       
-                </Link>
+                </li>
+
+                <li className="bs-docs-sidenav nav">
+                <button className="btn log"><Link to='/example'>Exampls</Link></button>
                 </li>
             </ul>
             </div>

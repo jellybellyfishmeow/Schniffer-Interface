@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { HashRouter as Router, Switch, Route} from 'react-router-dom';
-import constants from "./Components/constants";
+import { Switch, Route} from 'react-router-dom';
 import Nav from "./Components/nav";
 import DashboardActivity from "./Components/DashboardActivity";
 import LogInActivity from "./Components/LoginActivity";
@@ -16,17 +15,6 @@ class App extends Component {
     return (
       <div>
         <Nav />
-        <Router>
-          <Switch>
-            <Route exact path={constants.routes.dashboard} component={DashboardActivity}/>
-            <Route path={constants.routes.logIn} component={LogInActivity}/>
-            <Route path={constants.routes.signUp} component={SignUpActivity}/>
-            <Route path={constants.routes.networkMap} component={NetworkMap}/>
-            <Route path={constants.routes.networkUsage} component={NetworkUsage}/>
-            <Route path={constants.routes.SpeedTest} component={SpeedTest}/>
-
-          </Switch>
-        </Router>
       </div>
     );
   }

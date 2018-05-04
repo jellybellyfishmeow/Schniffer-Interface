@@ -1,5 +1,4 @@
 import React from "react";
-import constants from "./constants";
 import { Chart } from 'react-google-charts';
 import { Link } from "react-router-dom";
 
@@ -15,7 +14,7 @@ export default class NetworkMap extends React.Component {
 			legend: 'none',
 		  },
 		  data: [
-			['Age', 'Weight'],
+			['MEOW', 'Weight'],
 			[8, 12],
 			[4, 5.5],
 			[11, 14],

@@ -1,6 +1,5 @@
 import React from "react";
 import {Link, Redirect} from "react-router-dom";
-import constants from "./constants";
 import firebase from "firebase/app";
 
 export default class LoginActivity extends React.Component {
@@ -22,7 +21,7 @@ export default class LoginActivity extends React.Component {
                      this.setState({
                          authenticated: true,
                      });
-                     this.props.history.push(constants.routes.main);
+                     //this.props.history.push(constants.routes.main);
                  })
                  .catch((err) => {
                      alert(err.message);
@@ -78,7 +77,7 @@ export default class LoginActivity extends React.Component {
                             </form>
 
                             {/* Give the option to Sign up. */}
-                            <p>Don't yet have an account? <Link to={constants.routes.signUp}>Sign up!</Link></p>
+                            <p>Don't yet have an account? <Link to='signup'>Sign up!</Link></p>
                         </div>
                     </div>
                 </div>
