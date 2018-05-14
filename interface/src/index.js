@@ -13,8 +13,7 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
 import firebase from 'firebase/app';
-import 'firebase/auth';
-import 'firebase/database';
+
 
 var config = {
     apiKey: "AIzaSyApnR_BwdtI_kK_IUSUX6w5xc_PX7wtlM0",
