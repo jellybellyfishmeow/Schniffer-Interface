@@ -36,8 +36,8 @@ var config = {
           <Route path='/signup' component={SignUpActivity}/>
           <Route path='/networkMap' component={NetworkMap}/>
           <Route path='/networkUsage' component={NetworkUsage}/>
-          <Route path='speedTest' component={SpeedTest}/>
-          <Route path='example' component={List}/>
+          <Route path='/speedTest' component={SpeedTest}/>
+          <Route path='/example' component={List}/>
 
       </div>    
     </Router>

@@ -25,17 +25,17 @@ export default class NetworkMap extends React.Component {
 		};
 	  }
 	  render() {
-		return (
-		  <Chart
-			chartType="ScatterChart"
-			data={this.state.data}
-			options={this.state.options}
-			graph_id="ScatterChart"
-			width="100%"
-			height="400px"
-			legend_toggle
-		  />
-		);
+			return (
+				<Chart
+				chartType="ScatterChart"
+				data={this.state.data}
+				options={this.state.options}
+				graph_id="sChart"
+				width="100%"
+				height="400px"
+				legend_toggle
+				/>
+			);
 	  }
 }
 

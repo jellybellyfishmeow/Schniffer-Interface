@@ -1,37 +1,31 @@
 import React from "react";
 import { Chart } from 'react-google-charts';
+import { Link } from "react-router-dom";
 
 
 export default class SpeedTest extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-		  options: {
-			title: 'Network Speed',
-			hAxis: { title: 'time', minValue: 0, maxValue: 15 },
-			vAxis: { title: 'speed', minValue: 0, maxValue: 15 },
-			legend: 'none',
-		  },
-		  data: [
-			['time', 'speed'],
-			[2, 3.5],
-			[3, 12],
-			[4, 5.5],
-			[5, 5],
-			[6.5, 7],
-			[11, 14],
-		  ],
-		};
-	  }
+
+		   options: {
+				width: 500, height: 500,
+				redFrom: 90, redTo: 100,
+				yellowFrom:75, yellowTo: 90,
+				minorTicks: 5
+			},
+		  data: [['Label', 'Value'],
+			['Upload', 80],
+			['Download', 55]]
+		}
+	}
 	  render() {
 			return (
 				<Chart
-					chartType="LineChart"
+					chartType="Gauge"
 					data={this.state.data}
 					options={this.state.options}
-					graph_id="line"
-					width="100%"
-					height="400px"
+					graph_id="gauge"
 					legend_toggle
 				/>
 			);

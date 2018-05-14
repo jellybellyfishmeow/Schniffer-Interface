@@ -22,7 +22,7 @@ export default class DashboardActivity extends React.Component {
             top: "0",
             right: "0",
             bottom: "0",
-            left: "0"
+            left: "0",
         }
         return (
             <div>
@@ -65,6 +65,10 @@ export default class DashboardActivity extends React.Component {
                         <hr />
                           <DChart />
                         <hr />
+                        <SpeedTest />
+                        <p>
+                            your current upload speed is 12mb/s and your download speed is 58mb/s. it is fast
+                        </p>
                       </div>
                   </div>
             </div>
