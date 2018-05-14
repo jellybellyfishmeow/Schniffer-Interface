@@ -29,24 +29,16 @@ export default class LoginActivity extends React.Component {
     }
 
     render() {
-        let style = {
-            position: "absolute",
-            margin: "auto",
-            top: "0",
-            right: "0",
-            bottom: "0",
-            left: "0"
-        }
+    
 
         // Redirect to home if user is not logged in.
         if (this.state.authenticated) {
             this.props.history.push("/");
         }
-
         return (
             <div>
 
-                <div className="cont d-flex justify-content-center" style={style}>
+                <div className="cont d-flex justify-content-center">
                     <div className="card align-self-center">
                         <div className="card-block p-5">
                             <h2 className="mt-0">Log In</h2>

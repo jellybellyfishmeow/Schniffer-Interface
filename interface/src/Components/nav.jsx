@@ -1,42 +1,51 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Image, Nav, NavItem} from 'react-bootstrap';
+import { Image, Nav, NavItem, Grid, Row, Col, Navbar} from 'react-bootstrap';
 import firebase from "firebase/app";
+import '../App.css';
+
+
+function handleSelect(selectedKey) {
+    alert(`selected ${selectedKey}`);
+}
+
 
 const Navs = () => (
     <div>
-       
-        <div className="p-2 pl-3 d-flex justify-content-end">
-            <button className="mr-auto p-2 btn logo" onClick={() => {this.props.history.push("/")}}><Image src="./logo-website.png" height="70" width="180" /></button>
-            <button className="btn log" onClick={() => {this.props.history.push("/about")}}>about</button>
-            <button className="btn log" onClick={() => {this.props.history.push("/login")}}>log in</button>
-            <button className="btn log" onClick={() => {this.props.history.push("/signup")}}>sign up</button>
-        </div>
-        <div id="" className="" >
-            <div className="sidebar-wrapper">
-            <ul className="bs-docs-sidebar-holder col-md-3">
-                <li className="bs-docs-sidenav nav">
-                <button className="btn log"><Link to='/'>Dashboard</Link></button>
-                </li>
-                <li className="bs-docs-sidenav nav">
-                <button className="btn log"><Link to='/networkMap'>Network Map</Link></button>
-                </li>
-                <li className="bs-docs-sidenav nav">
-                <button className="btn log"><Link to='/speedTest'>SpeedTest</Link></button>
-                </li>
-                <li className="bs-docs-sidenav nav">
-                <button className="btn log"><Link to='/networkUsage'>Network Usage</Link>
-                </button>                       
-                </li>
-
-                <li className="bs-docs-sidenav nav">
-                <button className="btn log"><Link to='/example'>Example</Link></button>
-                </li>
-            </ul>
-            </div>
-        </div>
+        <Navbar fixedTop className="navMain">
+            <Navbar.Header>
+                <Navbar.Brand>
+                <Image src="./logo-website.png" height="100" width="120" href="/" />
+                </Navbar.Brand>
+            </Navbar.Header>
+            <Nav>
+                <NavItem eventKey={1} href="/">
+                Dashboard
+                </NavItem>
+                <NavItem eventKey={2} href="/networkMap">
+                Network Map
+                </NavItem>
+                <NavItem eventKey={3} href="/networkUsage">
+                Network Usage
+                </NavItem>
+                <NavItem eventKey={4} href="/speedTest">
+                Speed Test
+                </NavItem>
+            </Nav>
+            <Nav pullRight>
+                <NavItem eventKey={1} href="#">
+                    About Schniffer
+                </NavItem>
+                <NavItem eventKey={2} href="/login">
+                    Sign In
+                </NavItem>
+                <NavItem eventKey={3} href="">
+                    Sign Up
+                </NavItem>
+            </Nav>
+        </Navbar>
     </div>
-  )
+)
   
 export default Navs
 

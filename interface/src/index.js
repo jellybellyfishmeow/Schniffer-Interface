@@ -7,7 +7,6 @@ import SignUpActivity from "./Components/SignUpActivity";
 import NetworkMap from "./Components/NetworkMap";
 import SpeedTest from './Components/SpeedTest';
 import NetworkUsage from './Components/NetworkUsage';
-import List from './Components/example';
 
 import './index.css';
 import App from './App';
@@ -29,7 +28,7 @@ var config = {
 
   ReactDOM.render((
     <Router>
-      <div>
+      <div className="total">
         <App />
         <Route exact path='/' component={DashboardActivity}/>
           <Route path='/login' component={LogInActivity}/>
@@ -37,7 +36,6 @@ var config = {
           <Route path='/networkMap' component={NetworkMap}/>
           <Route path='/networkUsage' component={NetworkUsage}/>
           <Route path='/speedTest' component={SpeedTest}/>
-          <Route path='/example' component={List}/>
 
       </div>    
     </Router>

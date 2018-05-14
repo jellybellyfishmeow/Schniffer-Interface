@@ -53,15 +53,7 @@ export default class SignUpActivity extends React.Component {
     }
 
     render() {
-        let style = {
-            position: "absolute",
-            margin: "auto",
-            top: "0",
-            right: "0",
-            bottom: "0",
-            left: "0"
-        }
-
+        
         // Redirect if authenticated
         if (this.state.authenticated) {
             this.props.history.push("/")
@@ -69,10 +61,7 @@ export default class SignUpActivity extends React.Component {
 
         return (
             <div>
-                <div className="p-2 pl-3 d-flex justify-content-end">
-                    <button className="mr-auto p-2 btn logo" onClick={() => {this.props.history.push("/")}}><i className="fa fa-leaf green fa-3x" aria-hidden="true"></i></button>
-                </div>
-             <div className="cont d-flex justify-content-center" style={style}>
+             <div className="cont d-flex justify-content-center">
                     <div className="card align-self-center">
                         <div className="card-block p-5">
                             <h2>Sign Up</h2>

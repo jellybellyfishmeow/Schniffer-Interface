@@ -10,23 +10,15 @@ import JsonTable from "ts-react-json-table";
 export default class DashboardActivity extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            
+        this.state = {   
         }
     }
     
     render() {
-        let style = {
-            position: "absolute",
-            margin: "auto",
-            top: "0",
-            right: "0",
-            bottom: "0",
-            left: "0",
-        }
+        
         return (
             <div>
-                <div className="cont d-flex justify-content-center" style={style}>              
+                <div className="cont d-flex justify-content-center" >              
             
                     <div className="card align-self-center">
                       <hr />
