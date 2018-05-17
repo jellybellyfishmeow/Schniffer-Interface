@@ -58,9 +58,7 @@ export default class DashboardActivity extends React.Component {
                           <DChart />
                         <hr />
                         <SpeedTest />
-                        <p>
-                            your current upload speed is 12mb/s and your download speed is 58mb/s. it is fast
-                        </p>
+                        
                       </div>
                   </div>
             </div>

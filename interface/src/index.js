@@ -13,6 +13,7 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
 import firebase from 'firebase/app';
+import LoginActivity from './Components/LoginActivity';
 
 
 var config = {
@@ -29,7 +30,7 @@ var config = {
     <Router>
       <div className="total">
         <App />
-        <Route exact path='/' component={DashboardActivity}/>
+        <Route exact path='/' component={LoginActivity}/>
           <Route path='/login' component={LogInActivity}/>
           <Route path='/signup' component={SignUpActivity}/>
           <Route path='/networkMap' component={NetworkMap}/>

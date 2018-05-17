@@ -30,13 +30,9 @@ export default class App extends React.Component {
     this.authSubscription();
   }
   render() {
-    // The application is initialising
-    if (this.state.loading) return null;
-    // The user is an Object, so they're logged in
-    if (this.state.user) return <div className="total">
+    
+    return <div className="total">
         <Navs />
       </div>;
-    // The user is null, so they're logged out
-    return <LogInActivity />;
   }
 }
