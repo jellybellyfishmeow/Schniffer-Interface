@@ -26,18 +26,6 @@ var config = {
   };
   firebase.initializeApp(config);
 
-  ReactDOM.render((
-    <Router>
-      <div className="total">
-        <App />
-        <Route exact path='/' component={LoginActivity}/>
-          <Route path='/login' component={LogInActivity}/>
-          <Route path='/signup' component={SignUpActivity}/>
-          <Route path='/networkMap' component={NetworkMap}/>
-          <Route path='/networkUsage' component={NetworkUsage}/>
-          <Route path='/speedTest' component={SpeedTest}/>
+  ReactDOM.render(<App />, document.getElementById('root'));
 
-      </div>    
-    </Router>
-  ), document.getElementById('root'))
   registerServiceWorker();

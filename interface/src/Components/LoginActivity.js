@@ -2,6 +2,7 @@ import React from "react";
 import {Link, Redirect} from "react-router-dom";
 import firebase from "firebase/app";
 
+
 export default class LoginActivity extends React.Component {
     constructor(props) {
         super(props);
@@ -21,13 +22,14 @@ export default class LoginActivity extends React.Component {
                      this.setState({
                          authenticated: true,
                      });
-                 })
+                     this.props.history.push("/");
+                    })
                  .catch((err) => {
                      alert(err.message);
                  });
          }
     }
-
+  
     render() {
     
 

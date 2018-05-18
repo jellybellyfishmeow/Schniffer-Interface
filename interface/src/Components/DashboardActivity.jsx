@@ -4,6 +4,7 @@ import {Link, Redirect} from "react-router-dom";
 import firebase from "firebase/app";
 import DChart from "./Chart";
 import SpeedTest from "./SpeedTest";
+import Nav from "./nav"
 import NetworkUsage from "./NetworkUsage";
 import JsonTable from "ts-react-json-table";
 
@@ -18,8 +19,8 @@ export default class DashboardActivity extends React.Component {
         
         return (
             <div>
+              <Nav />
                 <div className="cont d-flex justify-content-center" >              
-            
                     <div className="card align-self-center">
                       <hr />
                       <NetworkUsage />

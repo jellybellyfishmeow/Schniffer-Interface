@@ -1,7 +1,7 @@
 import Read from "./Read";
 import React from "react";
 import { Link } from "react-router-dom";
-var myTxt = require("../speedtest.log");
+import myTxt from "../speedtest.log";
 
 export default class SpeedTest extends React.Component {
 	constructor(props) {
@@ -26,9 +26,6 @@ export default class SpeedTest extends React.Component {
 					<Read
 					txt={myTxt}
 					/>
-					<p>
-						Your current upload speed is {this.state.upS}, and your download speed is {this.state.downS}. {this.state.message}
-                    </p>
 				</div>
 
 			);

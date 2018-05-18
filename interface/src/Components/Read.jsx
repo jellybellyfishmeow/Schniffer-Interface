@@ -9,8 +9,8 @@ export default class Read extends React.Component {
 			text: [],
 			options: {
 				width: 500, height: 500,
-				redFrom: 90, redTo: 100,
-				yellowFrom:75, yellowTo: 90,
+				redFrom: 0, redTo: 10,
+				yellowFrom:10, yellowTo: 20,
 				minorTicks: 5
 			},
 		   data: []
@@ -37,7 +37,7 @@ export default class Read extends React.Component {
 					var n2 = Math.round(parseFloat(this.state.text[2]))
 					console.log((this.state.text))
 					this.setState ({
-						data: [["label", "value"],["upload", n2],["download", parseInt(n1)]]
+						data: [["label", "value"],["upload", 54],["download", 13]]
 					})
 
 				}
@@ -50,7 +50,6 @@ export default class Read extends React.Component {
 	render() {
 		return (
 			<div>
-				{(this.state.text[1])}
 				<Chart
 						chartType="Gauge"
 						data={this.state.data}
@@ -58,6 +57,9 @@ export default class Read extends React.Component {
 						graph_id="gauge"
 						legend_toggle
 				/>
+				<p>
+					Your current upload speed is {(this.state.text[1])}, and your download speed is {(this.state.text[2])}. {this.state.message}
+         		</p>
 			</div>
 		);
 	}

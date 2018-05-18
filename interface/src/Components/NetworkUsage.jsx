@@ -25,6 +25,7 @@ export default class NetworkUsage extends React.Component {
 	  }
 	  render() {
 			return (
+				<div>
 				<Chart
 					chartType="LineChart"
 					data={this.state.data}
@@ -34,6 +35,8 @@ export default class NetworkUsage extends React.Component {
 					height="400px"
 					legend_toggle
 				/>
+				<p>Looks like you have an average amount of network usage. Try running a <span><a>speed test</a></span> if you have any issues </p>
+				</div>
 			);
 	  }
 }

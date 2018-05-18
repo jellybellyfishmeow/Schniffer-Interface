@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Image, Nav, NavItem, Grid, Row, Col, Navbar} from 'react-bootstrap';
 import firebase from "firebase/app";
 import '../App.css';
+import constants from "./constants";
 
 
 function handleSelect(selectedKey) {
@@ -19,17 +20,15 @@ const Navs = () => (
                 </Navbar.Brand>
             </Navbar.Header>
             <Nav>
-                <NavItem eventKey={1} href="/">
-                Dashboard
-                </NavItem>
+                <NavItem eventKey={1}></NavItem>
                 <NavItem eventKey={2} href="/networkMap">
                 Network Map
                 </NavItem>
                 <NavItem eventKey={3} href="/networkUsage">
                 Network Usage
                 </NavItem>
-                <NavItem eventKey={4} href="/speedTest">
-                Speed Test
+                <NavItem eventKey={4}>
+                    <Link to={constants.routes.speedTest}>Speed Test</Link>                
                 </NavItem>
             </Nav>
             <Nav pullRight>
