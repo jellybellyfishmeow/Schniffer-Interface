@@ -59,7 +59,7 @@ export default class SignUpActivity extends React.Component {
         
         // Redirect if authenticated
         if (this.state.authenticated) {
-            history.push(routes.LANDING);
+            this.history.push(routes.LANDING);
         }
 
         return (
