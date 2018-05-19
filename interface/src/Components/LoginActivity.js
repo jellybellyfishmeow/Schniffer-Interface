@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
+import React from "react";
 import { withRouter } from 'react-router-dom';
-
-//import { SignUpLink } from './SignUp';
-import {auth} from "firebase/app"
+import firebase from 'firebase';
+import 'firebase/auth';
 import * as routes from '../constants/route';
 
 const LoginActivity = ({ history }) =>
   <div>
     <h1>SignIn</h1>
-    <Login history={history} />
+    <SignInForm history={history} />
   </div>
 
 const byPropKey = (propertyName, value) => () => ({
@@ -21,7 +20,7 @@ const INITIAL_STATE = {
   error: null,
 };
 
-class Login extends Component {
+class SignInForm extends React.Component {
   constructor(props) {
     super(props);
 
@@ -38,10 +37,10 @@ class Login extends Component {
       history,
     } = this.props;
 
-    auth.doSignInWithEmailAndPassword(email, password)
+    firebase.auth().signInWithEmailAndPassword(email, password)
       .then(() => {
         this.setState(() => ({ ...INITIAL_STATE }));
-        history.push(routes.SPEED);
+        history.push(routes.LANDING);
       })
       .catch(error => {
         this.setState(byPropKey('error', error));
@@ -85,8 +84,8 @@ class Login extends Component {
   }
 }
 
-export default withRouter(Login);
+export default withRouter(LoginActivity);
 
 export {
-  LoginActivity,
+  SignInForm,
 };

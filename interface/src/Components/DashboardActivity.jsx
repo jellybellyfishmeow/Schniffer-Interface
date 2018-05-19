@@ -1,11 +1,9 @@
 import React from "react";
-import { Table, Image} from 'react-bootstrap';
-import {Link, Redirect} from "react-router-dom";
-import firebase from "firebase/app";
+import { Table} from 'react-bootstrap';
+import {Link} from "react-router-dom";
 import DChart from "./Chart";
 import SpeedTest from "./SpeedTest";
 import NetworkUsage from "./NetworkUsage";
-import JsonTable from "ts-react-json-table";
 
 export default class DashboardActivity extends React.Component {
     constructor(props) {

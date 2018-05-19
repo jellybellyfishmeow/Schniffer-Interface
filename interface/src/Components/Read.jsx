@@ -1,5 +1,6 @@
 import React from "react";
 import { Chart } from 'react-google-charts';
+import myTxt from "../speedtest.log";
 
 export default class Read extends React.Component {
 	constructor(props) {
@@ -18,7 +19,25 @@ export default class Read extends React.Component {
 	}
 
 	componentDidMount() {
-		this.readTextFile(this.props.txt);
+		this.readTextFile(myTxt);
+	}
+
+	determine() {
+		var n1 = parseFloat(this.state.text[1]);
+		var n2 = Math.round(parseFloat(this.state.text[2]))
+		console.log(this.state.text[1])
+		this.setState ({
+			data: [["label", "value"],["upload", 54],["download", 13]]
+		})
+		if (n1 > 10 && n2 > 10) {
+			this.setState({
+				message: "It is very fast! Congrats, you have a healthy network" 
+			});
+		} else {
+			this.setState({
+				message: "Uh oh, you might want to take a look at the devices on and usage of your network"
+			});		  
+		}
 	}
 
 	readTextFile = file => {
@@ -26,23 +45,15 @@ export default class Read extends React.Component {
 		rawFile.open("GET", file, false);
 		rawFile.onreadystatechange = () => {
 			if (rawFile.readyState === 4) {
-				if (rawFile.status === 200 || rawFile.status == 0) {
+				if (rawFile.status === 200 || rawFile.status === 0) {
 					var allText = rawFile.responseText;
 					this.setState({
 						text: allText.split("\n").map((item) => {
 							return item.split(" ")[1];
 						})
 					});
-					var n1 = (this.state.text[1]);
-					var n2 = Math.round(parseFloat(this.state.text[2]))
-					console.log((this.state.text))
-					this.setState ({
-						data: [["label", "value"],["upload", 54],["download", 13]]
-					})
-
 				}
 			}
-			
 		};
 		rawFile.send(null);
 	};

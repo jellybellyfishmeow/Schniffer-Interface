@@ -1,11 +1,9 @@
 import React from "react";
 import { Link, Redirect } from 'react-router-dom';
 import firebase from "firebase/app";
-import {auth} from "firebase/app"
+import "firebase/auth";
 
-import * as routes from '../constants/route';
-
-export default class SignUpActivity extends React.Component {
+export default class SignUp extends React.Component {
     constructor(props) {
         super(props);
 
@@ -59,7 +57,7 @@ export default class SignUpActivity extends React.Component {
         
         // Redirect if authenticated
         if (this.state.authenticated) {
-            history.push(routes.LANDING);
+            this.props.history.push("/")
         }
 
         return (
