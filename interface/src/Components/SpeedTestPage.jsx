@@ -8,13 +8,14 @@ export default class SpeedTestPage extends React.Component {
     }
 
     handleOnClick() {
+        alert("run!!!");
         // re run speed test, update local file, re-render element
     }
     render() {
         return(
             <div>
                 <SpeedTest />
-                <Button> onClick={this.handleOnClick}> Re-run a speed test! </Button>	
+                <Button bsStyle="primary" bsSize="large" block onClick={this.handleOnClick}> Re-run a speed test! </Button>	
             </div>
         );
     }
