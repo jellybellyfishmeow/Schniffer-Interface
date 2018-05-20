@@ -2,7 +2,7 @@ import React from "react";
 import { Chart } from 'react-google-charts';
 import myTxt from "../speedtest.log";
 
-export default class Read extends React.Component {
+class Read extends React.Component {
 	constructor(props) {
 		super(props);
 
@@ -14,31 +14,16 @@ export default class Read extends React.Component {
 				yellowFrom:10, yellowTo: 20,
 				minorTicks: 5
 			},
-		   data: []
-		};
+           data: [],
+           message: ""
+        };
 	}
 
 	componentDidMount() {
 		this.readTextFile(myTxt);
 	}
 
-	determine() {
-		var n1 = parseFloat(this.state.text[1]);
-		var n2 = Math.round(parseFloat(this.state.text[2]))
-		console.log(this.state.text[1])
-		this.setState ({
-			data: [["label", "value"],["upload", 54],["download", 13]]
-		})
-		if (n1 > 10 && n2 > 10) {
-			this.setState({
-				message: "It is very fast! Congrats, you have a healthy network" 
-			});
-		} else {
-			this.setState({
-				message: "Uh oh, you might want to take a look at the devices on and usage of your network"
-			});		  
-		}
-	}
+	
 
 	readTextFile = file => {
 		var rawFile = new XMLHttpRequest(); <datagrid></datagrid>
@@ -49,11 +34,30 @@ export default class Read extends React.Component {
 					var allText = rawFile.responseText;
 					this.setState({
 						text: allText.split("\n").map((item) => {
-							return item.split(" ")[1];
+							return (item.split(" ")[1]);
 						})
 					});
+					let up = parseInt(allText.split("\n").map((item) => {
+						return (item.split(" ")[1]);
+					})[1]);
+					let down = parseInt(allText.split("\n").map((item) => {
+						return (item.split(" ")[1]);
+					})[2]);
+					this.setState({
+						data: [["label", "value"],["upload", up],["download", down]]
+					})
+					if (up > 20 && down > 10) {
+						this.setState({
+							message: "It is very fast! Congrats, you have a healthy network" 
+						});
+					} else {
+						this.setState({
+							message: "Uh oh, you might want to take a look at the devices on and usage of your network"
+						});		  
+					}
 				}
 			}
+
 		};
 		rawFile.send(null);
 	};
@@ -70,9 +74,10 @@ export default class Read extends React.Component {
 				/>
 				<p>
 					Your current upload speed is {(this.state.text[1])}, and your download speed is {(this.state.text[2])}. {this.state.message}
-         		</p>
+         		</p>	
 			</div>
 		);
 	}
 }
+export default Read;
 
