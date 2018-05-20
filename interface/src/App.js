@@ -8,7 +8,7 @@ import * as routes from './constants/route';
 import DashboardActivity from "./Components/DashboardActivity";
 import LoginActivity from "./Components/LoginActivity";
 import About from "./Components/about";
-import SpeedTest from './Components/SpeedTest';
+import SpeedTestPage from './Components/SpeedTestPage';
 import NetworkUsage from './Components/NetworkUsage';
 import Navigation from './Components/Navigation';
 
@@ -23,7 +23,7 @@ const App = () =>
       />
       <Route
         exact path={routes.SPEED}
-        component={() => <SpeedTest />}
+        component={() => <SpeedTestPage />}
       />
       <Route
         exact path={routes.SIGN_IN}
