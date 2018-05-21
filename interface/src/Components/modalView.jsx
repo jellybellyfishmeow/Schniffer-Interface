@@ -29,11 +29,6 @@ export default class ModalView extends React.Component {
 	  render() {
 			return (
 				<div>
-					{this.props.text.length - 1}
-					{this.state.text[1]}
-					<br />
-					{this.state.text[2]}
-					{this.state.text}
 
 				</div>
 			);

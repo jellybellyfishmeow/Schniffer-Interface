@@ -52,9 +52,9 @@ export default class DevicesModal extends React.Component {
 			return (
 				<div>
 					{this.state.text.length - 1}
-					{this.state.text[1]}
+					{/* {this.state.text[1]}
 					<br />
-					{this.state.text[2]}
+					{this.state.text[2]} */}
 					<ModalView text={this.state.text} />
 				</div>
 			);
