@@ -4,4 +4,3 @@ export const LANDING = '/';
 export const USAGE = '/networkusage';
 export const SPEED = '/speedtest';
 export const ABOUT = '/about';
-export const MODAL = '/modal';

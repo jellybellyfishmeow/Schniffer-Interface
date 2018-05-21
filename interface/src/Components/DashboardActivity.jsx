@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 import DChart from "./Chart";
 import SpeedTest from "./SpeedTest";
 import NetworkUsage from "./NetworkUsage";
-import ThisModal from "./Modal";
+import ThisModal from "./ThisModal";
 import DevicesModal from "./DevicesModal";
 
 

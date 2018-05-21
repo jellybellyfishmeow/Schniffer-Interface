@@ -1,5 +1,6 @@
 import React from "react";
 import { Modal, Popover, Tooltip, Button, OverlayTrigger} from 'react-bootstrap';
+import DevicesModal from "./DevicesModal";
 
 export default class ThisModal extends React.Component {
     constructor(props, context) {
@@ -24,7 +25,7 @@ export default class ThisModal extends React.Component {
     render() {
       const popover = (
         <Popover id="modal-popover" title="popover">
-          very popover. such engagement
+          wow! how do we know? We used a tool called ?
         </Popover>
       );
       const tooltip = <Tooltip id="modal-tooltip">wow.</Tooltip>;
@@ -39,30 +40,30 @@ export default class ThisModal extends React.Component {
   
           <Modal show={this.state.show} onHide={this.handleClose}>
             <Modal.Header closeButton>
-              <Modal.Title>Modal heading</Modal.Title>
+              <Modal.Title>List of Devices*</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <h4>Text in a modal</h4>
+              <h4>* Actually, a list of vendors</h4>
               <p>
-                Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+                While a scan of your network cannot show the actual devices on the network, we can 
+                get the manufacturer information for every device on the network. This information 
+                is helpful in determining if you have any extra and unfamiliar devices on your network.
               </p>
   
-              <h4>Popover in a modal</h4>
+              <h4>How many devices do you currently have? </h4>
+              
               <p>
-                there is a{' '}
                 <OverlayTrigger overlay={popover}>
-                  <a href="#popover">popover</a>
+                  <a href="#popover"><DevicesModal /></a>
                 </OverlayTrigger>{' '}
-                here
               </p>
   
-              <h4>Tooltips in a modal</h4>
+              <h4>List of devices by vendor</h4>
               <p>
-                there is a{' '}
-                <OverlayTrigger overlay={tooltip}>
+                {/* <OverlayTrigger overlay={tooltip}>
                   <a href="#tooltip">tooltip</a>
-                </OverlayTrigger>{' '}
-                here
+                </OverlayTrigger>{' '} */}
+                table HERE
               </p>
     
               

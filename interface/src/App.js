@@ -39,10 +39,7 @@ const App = () =>
         exact path={routes.ABOUT}
         component={() => <About />}
       />
-      <Route
-        exact path={routes.MODAL}
-        component={() => <DevicesModal />}
-      />
+     
     </div>
   </Router>
 
