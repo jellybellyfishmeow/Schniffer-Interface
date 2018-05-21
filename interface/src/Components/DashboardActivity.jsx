@@ -4,6 +4,9 @@ import {Link} from "react-router-dom";
 import DChart from "./Chart";
 import SpeedTest from "./SpeedTest";
 import NetworkUsage from "./NetworkUsage";
+import ThisModal from "./Modal";
+import DevicesModal from "./DevicesModal";
+
 
 export default class DashboardActivity extends React.Component {
     constructor(props) {
@@ -18,7 +21,9 @@ export default class DashboardActivity extends React.Component {
             <div>
                 <div className="cont d-flex justify-content-center" >              
                     <div className="card align-self-center">
-                      <hr />
+        <h4>You currently have <span><DevicesModal /> </span>devices on your network</h4>
+                    <ThisModal />
+                      <hr />                      
                       <NetworkUsage />
                       <hr />
                       <Table striped bordered condensed hover>
@@ -55,7 +60,6 @@ export default class DashboardActivity extends React.Component {
                           <DChart />
                         <hr />
                         <SpeedTest />
-                        
                       </div>
                   </div>
             </div>

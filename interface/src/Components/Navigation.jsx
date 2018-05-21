@@ -25,6 +25,9 @@ const NavigationNonAuth = () => (
       <NavItem eventKey={2}>
         <Link to={routes.SIGN_IN}>Sign In</Link>
       </NavItem>
+      <NavItem eventKey={2}>
+        <Link to={routes.MODAL}>devices</Link>
+      </NavItem>
     </Nav>
   </Navbar>
 )
