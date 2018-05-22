@@ -1,17 +1,39 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Image, Nav, NavItem, Navbar} from 'react-bootstrap';
-import SignOut from "./SignOutActivity";
 import '../App.css';
 import * as routes from '../constants/route';
+import firebase from 'firebase';
+import 'firebase/auth';
 
-const Navigation = ({ authUser }) =>
-  <div>
-    { authUser
+export default class Navigation extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      authUser: null,
+    };
+  }
+  
+  componentDidMount() {
+    firebase.auth().onAuthStateChanged(authUser => {
+      authUser
+        ? this.setState(() => ({ authUser }))
+        : this.setState(() => ({ authUser: null }));
+    });
+  }
+  
+  render() {
+    return(
+      <div>
+    { this.state.authUser
         ? <NavigationAuth />
         : <NavigationNonAuth />
     }
   </div>
+    )
+  }
+}
 
 const NavigationNonAuth = () => (
   <Navbar fixedTop className="navMain">
@@ -52,12 +74,11 @@ const NavigationAuth = () => (
                 <Link to={routes.ABOUT}>About</Link>
               </NavItem>
               <NavItem eventKey={5}>
-                <SignOut />
+                <button className="btn log" onClick={() => firebase.auth().signOut().catch(err => alert(err.message))}>log out</button>
               </NavItem>
             </Nav>
         </Navbar>
     </div>
 )
   
-export default Navigation
 
