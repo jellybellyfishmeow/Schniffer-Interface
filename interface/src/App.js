@@ -63,18 +63,18 @@ export default class App extends Component {
               <PrivateRoute exact path="/" 
               component={DashboardActivity} 
               authenticated={this.state.authenticated}/>
-
-              <Route
-                exact path={routes.SPEED}
-                component={() => <SpeedTestPage />}
-              />
+              
+              <PrivateRoute exact path="/speedtest" 
+              component={SpeedTestPage} 
+              authenticated={this.state.authenticated}/>
+              
+              <PrivateRoute exact path="/networkusage" 
+              component={NetworkUsage} 
+              authenticated={this.state.authenticated}/>
+            
               <Route
                 exact path={routes.SIGN_IN}
                 component={() => <LoginActivity />}
-              />
-              <Route
-                exact path={routes.USAGE}
-                component={() => <NetworkUsage />}
               />
             
               <Route
