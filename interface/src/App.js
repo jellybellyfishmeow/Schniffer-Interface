@@ -14,7 +14,7 @@ import SpeedTestPage from './Components/SpeedTestPage';
 import NetworkUsage from './Components/NetworkUsage';
 import Navigation from './Components/Navigation';
 import PrivateRoute from './Components/PrivateRoute';
-
+import Malicious from './Components/malicious';
 
 export default class App extends Component {
   constructor(props) {
@@ -72,6 +72,10 @@ export default class App extends Component {
               component={NetworkUsage} 
               authenticated={this.state.authenticated}/>
             
+             <PrivateRoute exact path="/malicious" 
+              component={Malicious} 
+              authenticated={this.state.authenticated}/>
+
               <Route
                 exact path={routes.SIGN_IN}
                 component={() => <LoginActivity />}

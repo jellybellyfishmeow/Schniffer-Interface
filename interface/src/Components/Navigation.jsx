@@ -69,6 +69,9 @@ const NavigationAuth = () => (
                   <Link to={routes.USAGE}>Network Usage</Link>
                 </NavItem>
                 <NavItem eventKey={3}>
+                  <Link to={routes.MALICIOUS}>Malicious Activity</Link>                
+                </NavItem>
+                <NavItem eventKey={4}>
                   <Link to={routes.SPEED}>Speed Test</Link>                
                 </NavItem>
             </Nav>
