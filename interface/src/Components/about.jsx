@@ -7,7 +7,7 @@ import * as routes from '../constants/route';
 const About = () => (
     <div>
         <PageNav />
-        <Jumbotron>
+        <Jumbotron className="welp"> 
             <h1>Schniffer</h1>
             <p>
                 Welcome to Schniffer! Sign in to get started!
@@ -35,11 +35,9 @@ const About = () => (
     </div>
 )
 
-
 const PageNav = () => (
-    <Navbar fixedBottom className="navMain">
       
-      <Nav>
+      <Nav stacked className="aboutNav">
         <NavItem eventKey={1}>
           <Link to={routes.ABOUT}>About</Link>
         </NavItem>
@@ -48,7 +46,6 @@ const PageNav = () => (
         </NavItem>
         
       </Nav>
-    </Navbar>
   )
 
   export default About
