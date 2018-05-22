@@ -1,5 +1,6 @@
 import React from "react";
 import { Chart } from 'react-google-charts';
+import '../App.css';
 
 
 export default class NetworkUsage extends React.Component {
@@ -11,6 +12,7 @@ export default class NetworkUsage extends React.Component {
 			hAxis: { title: 'time', minValue: 0, maxValue: 15 },
 			vAxis: { title: 'amount', minValue: 0, maxValue: 15 },
 			legend: 'none',
+			backgroundColor: '#E4E4E4',
 		  },
 		  data: [
 			['time', 'amount'],

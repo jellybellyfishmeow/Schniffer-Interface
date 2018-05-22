@@ -1,6 +1,7 @@
 import React from "react";
 import { Chart } from 'react-google-charts';
 import myTxt from "../speedtest.log";
+import '../App.css';
 
 class SpeedTest extends React.Component {
 	constructor(props) {
@@ -64,7 +65,8 @@ class SpeedTest extends React.Component {
 	render() {
 		return (
 			<div>
-				<Chart
+				<p>For this speed test, the ping time was: {this.state.text[0]} ms</p>
+				<Chart 
 						chartType="Gauge"
 						data={this.state.data}
 						options={this.state.options}
@@ -72,7 +74,8 @@ class SpeedTest extends React.Component {
 						legend_toggle
 				/>
 				<p>
-					Your current upload speed is {(this.state.text[1])}, and your download speed is {(this.state.text[2])}. {this.state.message}
+					Your current upload speed is {(this.state.text[1])}Mbit/s, and your download speed is
+					 {(this.state.text[2])}Mbit/s. {this.state.message}
          		</p>
 				 <h2>{this.state.blah}</h2>
 			</div>
