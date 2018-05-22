@@ -1,13 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Image, Nav, NavItem, Navbar, Jumbotron, Button} from 'react-bootstrap';
-import SignOut from "./SignOutActivity";
 import '../App.css';
 import * as routes from '../constants/route';
 
 const About = () => (
     <div>
-        <PageNav />
         <Jumbotron>
             <h1>Schniffer</h1>
             <p>
