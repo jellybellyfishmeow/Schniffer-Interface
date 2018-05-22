@@ -22,7 +22,10 @@ export default class Navigation extends React.Component {
         : this.setState(() => ({ authUser: null }));
     });
   }
-  
+  componentWillUnmount() {
+    this.auth();
+}
+
   render() {
     return(
       <div>

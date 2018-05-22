@@ -13,7 +13,7 @@ import About from "./Components/about";
 import SpeedTestPage from './Components/SpeedTestPage';
 import NetworkUsage from './Components/NetworkUsage';
 import Navigation from './Components/Navigation';
-import DevicesModal from './Components/DevicesModal';
+import PrivateRoute from './Components/PrivateRoute';
 
 
 export default class App extends Component {
@@ -21,30 +21,49 @@ export default class App extends Component {
     super(props);
 
     this.state = {
-      authUser: "meow",
+      loading: true, 
+      authenticated: false, 
+      user: null
     };
   }
-  
-  componentDidMount() {
-    firebase.auth().onAuthStateChanged(authUser => {
-      authUser
-        ? this.setState(() => ({ authUser }))
-        : this.setState(() => ({ authUser: null }));
+
+  componentWillMount() {
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        this.setState({
+          authenticated: true,
+          currentUser: user,
+          loading: false
+        });
+      } else {
+        this.setState({
+          authenticated: false,
+          currentUser: null,
+          loading: false
+        });
+      }
     });
   }
-
+ 
     render() {
+      const { authenticated, loading } = this.state;
+
+      if (loading) {
+        return <p>Loading..</p>;
+      }
       return (
         <Router>
             <div className="total">
-            <Navigation authUser={this.state.authUser} />
-
               <Navigation />
               <hr/>
               <Route
                 exact path={routes.LANDING}
-                component={() => <DashboardActivity />}
+                component={() => <About />}
               />
+              <PrivateRoute exact path="/" 
+              component={DashboardActivity} 
+              authenticated={this.state.authenticated}/>
+
               <Route
                 exact path={routes.SPEED}
                 component={() => <SpeedTestPage />}
