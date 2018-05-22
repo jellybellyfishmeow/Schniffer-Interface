@@ -1,6 +1,7 @@
 import React from "react";
 import { Chart } from 'react-google-charts';
 import myTxt from "../speedtest.log";
+import '../App.css';
 
 class SpeedTest extends React.Component {
 	constructor(props) {
@@ -64,7 +65,7 @@ class SpeedTest extends React.Component {
 	render() {
 		return (
 			<div>
-				<Chart
+				<Chart 
 						chartType="Gauge"
 						data={this.state.data}
 						options={this.state.options}
