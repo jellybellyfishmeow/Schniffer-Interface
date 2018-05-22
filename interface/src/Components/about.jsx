@@ -6,20 +6,20 @@ import * as routes from '../constants/route';
 
 const About = () => (
     <div>
-        <Jumbotron>
+        <PageNav />
+        <Jumbotron className="welp"> 
             <h1>Schniffer</h1>
             <p>
-                This is a simple hero unit, a simple jumbotron-style component for calling
-                extra attention to featured content or information.
+                Welcome to Schniffer! Sign in to get started!
             </p>
             <p>
                 <Button bsStyle="info"><Link to={routes.SIGN_IN}>Log in now!</Link></Button>
             </p>
-        </Jumbotron>;
+        </Jumbotron>
         {/* jumbotron background of something?
             nav for each section
         */}
-        <h3>why network monitoring</h3>
+        <h3>why does security matter?</h3>
         <p>network monitoring is important</p>
 
         <h3>what is schniffer?</h3>
@@ -28,28 +28,24 @@ const About = () => (
         <h3>how do I set up schniffer?</h3>
         <p>instructions</p>
 
-        <h3>who we are</h3>
+        <h3>who are we?</h3>
         <p>us two</p>
-
+        {/*pic of us plus bios and shit*/}
+        
     </div>
 )
 
-
 const PageNav = () => (
-    <Navbar fixedTop className="navMain">
-      <Navbar.Header>
-        <Link to={routes.LANDING}><Image src="./logo-website.png" height="50" width="199" href="/" /></Link>
-      </Navbar.Header>
-      <Nav pullRight>
+      
+      <Nav stacked className="aboutNav">
         <NavItem eventKey={1}>
           <Link to={routes.ABOUT}>About</Link>
         </NavItem>
         <NavItem eventKey={2}>
-          <Link to={routes.SIGN_IN}>Sign In</Link>
+          <Link to={routes.SIGN_IN}>Set up</Link>
         </NavItem>
         
       </Nav>
-    </Navbar>
   )
 
   export default About

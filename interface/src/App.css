@@ -16,6 +16,14 @@
   font-family: 'Oxygen', sans-serif;
 
 }
+.aboutNav {
+  background: rgb(243, 149, 125);
+  font-family: 'Oxygen', sans-serif;
+
+}
+.welp {
+  background: turquoise
+}
 
 a {
   color: darkblue;
