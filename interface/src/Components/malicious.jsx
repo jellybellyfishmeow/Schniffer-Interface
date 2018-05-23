@@ -25,11 +25,9 @@ export default class Malicious extends React.Component {
             { alert: "DNS::External_Name", meaning: 27, urgent: "Yes" },
             { alert: "FTP::Site_Exec_Success", meaning: 27, urgent: "Yes" },
             { alert: "HTTP::SQL_Injection_Attacker", meaning: 27, urgent: "Yes" },
-            { alert: "HTTP::SQL_Injection_Victim", meaning: 27, urgent: "Yes" },
-            { alert: "Intel::Notice", meaning: 27, urgent: "No" },
-            { alert: "PacketFilter::Dropped_Packets", meaning: 27, urgent: "Yes" },
-            { alert: "ProtocolDetector::Protocol_Found", meaning: 27, urgent: "Yes" },
-            { alert: "ProtocolDetector::Server_Found", meaning: 27, urgent: "Yes" },
+            { alert: "HTTP::SQL_Injection_Victim", meaning: "Indicates that a host was seen to have SQL injection attacks against it. This is tracked by IP address as opposed to hostname.", urgent: "Yes" },
+            { alert: "Intel::Notice", meaning: "This notice is generated when an intelligence indicator is denoted to be notice-worthy.", urgent: "No" },
+            { alert: "PacketFilter::Dropped_Packets", meaning: "Indicates packets were dropped by the packet filter.", urgent: "Yes" },
             { alert: "SMTP::Blocklist_Blocked_Host", meaning: 27, urgent: "Yes" },
             { alert: "SMTP::Blocklist_Error_Message", meaning: 27, urgent: "Yes" },
             { alert: "SMTP::Suspicious_Origination", meaning: 27, urgent: "Yes" },
@@ -47,10 +45,12 @@ export default class Malicious extends React.Component {
             { alert: "Signatures::Multiple_Sig_Responders", meaning: 27, urgent: "Yes" },
             { alert: "Signatures::Multiple_Signatures", meaning: 27, urgent: "Yes" },
             { alert: "Signatures::Sensitive_Signature", meaning: 27, urgent: "Yes" },
-            { alert: "Software::Software_Version_Change", meaning: 27, urgent: "No" },
-            { alert: "Software::Vulnerable_Version", meaning: 27, urgent: "Yes" },
+            { alert: "Software::Software_Version_Change", meaning: "For certain software, a version changing may matter.", urgent: "No" },
+            { alert: "Software::Vulnerable_Version", meaning: "Indicates that a vulnerable version of software was detected.", urgent: "Yes" },
             { alert: "TeamCymruMalwareHashRegistry::Match", meaning: 27, urgent: "Yes" },
-            { alert: "Traceroute::Detected", meaning: 27, urgent: "No" },
+            { alert: "Traceroute::Detected", meaning: "Indicates that a host was seen running traceroutes", urgent: "No" },
+            { alert: "Notice::Tally", meaning: "Generic unusual but notice-worthy weird activity", urgent: "No" },
+
         ];
         
         // Fields to show in the table, and what object properties in the data they bind to
