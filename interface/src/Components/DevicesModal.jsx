@@ -50,12 +50,11 @@ export default class DevicesModal extends React.Component {
 
 	  render() {
 			return (
-				<div>
-					{this.state.text.length - 1}
-					{/* {this.state.text[1]}
-					<br />
-					{this.state.text[2]} */}
-				</div>
+				<span>7</span>
+				// <div>
+				// 	{/*this.state.text.length - 1*/}
+					
+				// </div>
 			);
 	  }
 }
