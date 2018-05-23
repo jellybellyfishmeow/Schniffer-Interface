@@ -1,6 +1,9 @@
 import React from "react";
 import { Modal, Popover, Tooltip, Button, OverlayTrigger} from 'react-bootstrap';
 import DevicesModal from "./DevicesModal";
+import DeviceTable from "./DeviceTable"
+import * as routes from '../constants/route';
+import { Link } from 'react-router-dom'
 
 export default class ThisModal extends React.Component {
     constructor(props, context) {
@@ -43,11 +46,12 @@ export default class ThisModal extends React.Component {
               <Modal.Title>List of Devices*</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <h4>* Actually, a list of vendors</h4>
+              <h4>*Take it with a grain of salt!</h4>
               <p>
-                While a scan of your network cannot show the actual devices on the network, we can 
-                get the manufacturer information for every device on the network. This information 
-                is helpful in determining if you have any extra and unfamiliar devices on your network.
+                While a scan of your network can get the manufacturer information (vendor) for every 
+                device on the network, our scans can only make educated guesses about the device type 
+                and operating system (OS) used by the device. This information is helpful in determining 
+                if you have any extra and unfamiliar devices on your network.
               </p>
   
               <h4>How many devices do you currently have? </h4>
@@ -60,11 +64,10 @@ export default class ThisModal extends React.Component {
   
               <h4>List of devices by vendor</h4>
               <p>
-                {/* <OverlayTrigger overlay={tooltip}>
-                  <a href="#tooltip">tooltip</a>
-                </OverlayTrigger>{' '} */}
-                table HERE
+                {<DeviceTable />}
               </p>
+
+              <h4>For more details, visit the <Link to={routes.DEVICES}>Network Devices</Link> page!</h4>
     
               
             </Modal.Body>
