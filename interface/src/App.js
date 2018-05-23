@@ -15,6 +15,7 @@ import NetworkUsage from './Components/NetworkUsage';
 import Navigation from './Components/Navigation';
 import PrivateRoute from './Components/PrivateRoute';
 import Malicious from './Components/malicious';
+import ModalView from './Components/modalView';
 
 export default class App extends Component {
   constructor(props) {
@@ -69,6 +70,10 @@ export default class App extends Component {
               component={NetworkUsage} 
               authenticated={this.state.authenticated}/>
             
+            <PrivateRoute exact path="/devices" 
+              component={ModalView} 
+              authenticated={this.state.authenticated}/>
+             
              <PrivateRoute exact path="/malicious" 
               component={Malicious} 
               authenticated={this.state.authenticated}/>

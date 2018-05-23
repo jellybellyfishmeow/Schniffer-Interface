@@ -71,6 +71,9 @@ const NavigationAuth = () => (
                 <NavItem eventKey={4}>
                   <Link to={routes.SPEED}>Speed Test</Link>                
                 </NavItem>
+                <NavItem eventKey={5}>
+                  <Link to={routes.DEVICES}>Network Devices</Link>
+                </NavItem>
             </Nav>
             <Nav pullRight>
               <NavItem eventKey={4}>
