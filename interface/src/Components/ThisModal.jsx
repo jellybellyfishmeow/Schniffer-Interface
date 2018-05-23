@@ -4,6 +4,7 @@ import DevicesModal from "./DevicesModal";
 import DeviceTable from "./DeviceTable"
 import * as routes from '../constants/route';
 import { Link } from 'react-router-dom'
+import '../App.css';
 
 export default class ThisModal extends React.Component {
     constructor(props, context) {
@@ -28,7 +29,7 @@ export default class ThisModal extends React.Component {
     render() {
       const popover = (
         <Popover id="modal-popover" title="popover">
-          wow! how do we know? We used a tool called ?
+          wow! how do we know? We used a tool called NMap!
         </Popover>
       );
       const tooltip = <Tooltip id="modal-tooltip">wow.</Tooltip>;

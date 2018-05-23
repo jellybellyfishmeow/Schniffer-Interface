@@ -4,7 +4,7 @@ import { Table} from 'react-bootstrap';
 
 
 const DeviceTable = () => (
-	<Table responsive striped bordered condensed hover>
+	<Table responsive bordered condensed hover className="table">
 		<thead>
 			<tr>
 				<th>Device Vendor</th>

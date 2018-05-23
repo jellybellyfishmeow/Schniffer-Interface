@@ -3,6 +3,7 @@ import React from "react";
 import { Chart } from 'react-google-charts';
 import DevicesModal from "./DevicesModal";
 import DeviceTable from "./DeviceTable"
+import '../App.css';
 
 export default class ModalView extends React.Component {
 	constructor(props) {
