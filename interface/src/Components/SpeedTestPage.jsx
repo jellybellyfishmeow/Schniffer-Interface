@@ -24,13 +24,16 @@ export default class SpeedTestPage extends React.Component {
 
 const PageText = () => (
     <div>
-        <h2>What does your network speed mean?</h2>
+        <h3>What does your network speed mean?</h3>
         <p>fast is gud, slow is bad</p>
-        <h2>What's a good speed to have?</h2>
-        <p>it depends</p>
-        <h2>Oh no! What if my network is slow?</h2>
+        <h3>What's a good speed to have?</h3>
+        <p>It very much depends on your needs. Generally one should be seeking at least 
+            25Mbps down and 2Mbps up from their provider. For multiple users such as in a small business
+            , we would recommend 15 Mbps or more per user unless your usage is light or broadband 
+            costs are prohibitive in your area.</p>
+        <h3>Oh no! What if my network is slow?</h3>
         <p>u fuked</p>
-        <h2>Where can I find out more information on this?</h2>
+        <h3>Where can I find out more information on this?</h3>
         <p>google it</p>
     </div>
   )

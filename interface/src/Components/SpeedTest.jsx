@@ -74,7 +74,7 @@ class SpeedTest extends React.Component {
 						legend_toggle
 				/>
 				<p>
-					Your current upload speed is {(this.state.text[1])}Mbit/s, and your download speed is
+					Your current upload speed is {(this.state.text[1])}Mbit/s, and your download speed is 
 					 {(this.state.text[2])}Mbit/s. {this.state.message}
          		</p>
 				 <h2>{this.state.blah}</h2>
