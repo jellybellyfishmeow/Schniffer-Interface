@@ -1,7 +1,8 @@
 import myTxt from "../myscan.xml";
 import React from "react";
 import { Chart } from 'react-google-charts';
-
+import { Table} from 'react-bootstrap';
+import DevicesModal from "./DevicesModal";
 
 
 export default class ModalView extends React.Component {
@@ -29,6 +30,7 @@ export default class ModalView extends React.Component {
 	  render() {
 			return (
 				<div>
+					<h3></h3>
 
 				</div>
 			);

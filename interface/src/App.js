@@ -11,7 +11,7 @@ import About from "./Components/about";
 import SpeedTestPage from './Components/SpeedTestPage';
 import NetworkUsage from './Components/NetworkUsage';
 import Navigation from './Components/Navigation';
-import DevicesModal from './Components/DevicesModal';
+import ModalView from './Components/modalView';
 
 const App = () =>
   <Router>
@@ -34,7 +34,10 @@ const App = () =>
         exact path={routes.USAGE}
         component={() => <NetworkUsage />}
       />
-     
+     <Route
+        exact path={routes.DEVICES}
+        component={() => <ModalView />}
+      />
       <Route
         exact path={routes.ABOUT}
         component={() => <About />}
