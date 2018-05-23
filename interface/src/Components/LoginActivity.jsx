@@ -6,7 +6,6 @@ import * as routes from '../constants/route';
 
 const LoginActivity = ({ history }) =>
   <div>
-    <h1>SignIn</h1>
     <SignInForm history={history} />
   </div>
 
@@ -55,31 +54,44 @@ class SignInForm extends React.Component {
       password,
       error,
     } = this.state;
-
+    
+  
     const isInvalid =
       password === '' ||
       email === '';
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
-          value={email}
-          onChange={event => this.setState(byPropKey('email', event.target.value))}
-          type="text"
-          placeholder="Email Address"
-        />
-        <input
-          value={password}
-          onChange={event => this.setState(byPropKey('password', event.target.value))}
-          type="password"
-          placeholder="Password"
-        />
-        <button disabled={isInvalid} type="submit">
-          Sign In
-        </button>
+      <div className="cont d-flex justify-content-center">
+        <div className="card align-self-center">
+            <div className="card-block p-5">
+                <h2 className="mt-0">Log In</h2>
+                <form onSubmit={this.onSubmit}>
+                    {/* Email Input Field */}
+                    <div className="form-group">
+                        <input id="email" type="email" className="form-control" placeholder="enter your email"
+                        value={email}
+                        onChange={event => this.setState(byPropKey('email', event.target.value))}
+                        />
+                    </div>
 
-        { error && <p>{error.message}</p> }
-      </form>
+                    {/* Password Input Field */}
+                    <div className="form-group">
+                        <input id="password" type="password" className="form-control" placeholder="enter a password"
+                        value={this.state.password}
+                        onChange={event => this.setState(byPropKey('password', event.target.value))}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <button type="submit" disabled={isInvalid} className="w-100 btn btn-primary">
+                            Sign In
+                        </button>
+                        { error && <p>{error.message}</p> }
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     );
   }
 }
