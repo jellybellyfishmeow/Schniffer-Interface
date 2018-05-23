@@ -11,11 +11,6 @@
   font-size: large;
 }
 
-.navMain {
-  background: rgb(243, 149, 125);
-  font-family: 'Oxygen', sans-serif;
-
-}
 .aboutNav {
   background: rgb(243, 149, 125);
   font-family: 'Oxygen', sans-serif;
@@ -26,9 +21,18 @@
 }
 
 a {
-  color: darkgreen;
+  color: lightsalmon;
 }
 
+.navMain {
+  background: rgb(243, 149, 125);
+  font-family: 'Oxygen', sans-serif;
+  color: black;
+}
+
+.NavLink {
+  color: black
+}
 .table {
   background: lightgreen
 }

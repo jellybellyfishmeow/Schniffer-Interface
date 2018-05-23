@@ -1,6 +1,9 @@
 import React from "react";
 import { Chart } from 'react-google-charts';
 import '../App.css';
+import {Link} from "react-router-dom";
+import * as routes from '../constants/route';
+
 
 
 export default class NetworkUsage extends React.Component {
@@ -37,7 +40,8 @@ export default class NetworkUsage extends React.Component {
 					height="400px"
 					legend_toggle
 				/>
-				<p>Looks like you have an average amount of network usage. Try running a <span><a>speed test</a></span> if you have any issues </p>
+				<p>Looks like you have an average amount of network usage. 
+					Try running a <Link to={routes.SPEED}>speed test</Link> if you have any issues </p>
 				</div>
 			);
 	  }

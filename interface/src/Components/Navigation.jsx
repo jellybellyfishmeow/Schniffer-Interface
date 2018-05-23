@@ -56,28 +56,28 @@ const NavigationAuth = () => (
     <div>
         <Navbar fixedTop className="navMain">
             <Navbar.Header>
-                <Link to={routes.LANDING}><Image src="./logo-website.png" height="50" width="199" href="/" /></Link>
+                <Link className="NavLink" to={routes.LANDING}><Image src="./logo-website.png" height="50" width="199" href="/" /></Link>
             </Navbar.Header>
             <Nav>
                 <NavItem eventKey={1}>
-                  <Link to={routes.LANDING}>Dashboard</Link>
+                  <Link className="NavLink" to={routes.LANDING}>Dashboard</Link>
                 </NavItem>
                 <NavItem eventKey={2} >
-                  <Link to={routes.USAGE}>Network Usage</Link>
+                  <Link className="NavLink" to={routes.USAGE}>Network Usage</Link>
                 </NavItem>
                 <NavItem eventKey={3}>
-                  <Link to={routes.MALICIOUS}>Malicious Activity</Link>                
+                  <Link className="NavLink" to={routes.MALICIOUS}>Suspicious Activity Log</Link>                
                 </NavItem>
                 <NavItem eventKey={4}>
-                  <Link to={routes.SPEED}>Speed Test</Link>                
+                  <Link className="NavLink" to={routes.SPEED}>Speed Test</Link>                
                 </NavItem>
                 <NavItem eventKey={5}>
-                  <Link to={routes.DEVICES}>Network Devices</Link>
+                  <Link className="NavLink" to={routes.DEVICES}>Network Devices</Link>
                 </NavItem>
             </Nav>
             <Nav pullRight>
               <NavItem eventKey={4}>
-                <Link to={routes.ABOUT}>About</Link>
+                <Link className="NavLink" to={routes.ABOUT}>About</Link>
               </NavItem>
               <NavItem eventKey={5}>
                 <button className="btn log" onClick={() => firebase.auth().signOut().catch(err => alert(err.message))}>log out</button>

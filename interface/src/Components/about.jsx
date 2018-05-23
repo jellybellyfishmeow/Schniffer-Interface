@@ -13,7 +13,7 @@ const About = () => (
                 Welcome to Schniffer! Sign in to get started!
             </p>
             <p>
-                <Button bsStyle="info"><Link to={routes.SIGN_IN}>Log in now!</Link></Button>
+                <Button bsStyle="info"><Link className="NavLink" to={routes.SIGN_IN}>Log in now!</Link></Button>
             </p>
         </Jumbotron>
         {/* jumbotron background of something?
@@ -39,10 +39,10 @@ const PageNav = () => (
       
       <Nav stacked className="aboutNav">
         <NavItem eventKey={1}>
-          <Link to={routes.ABOUT}>About</Link>
+          <Link className="NavLink" to={routes.ABOUT}>About</Link>
         </NavItem>
         <NavItem eventKey={2}>
-          <Link to={routes.SIGN_IN}>Set up</Link>
+          <Link className="NavLink" to={routes.DEVICES}>Set up</Link>
         </NavItem>
         
       </Nav>

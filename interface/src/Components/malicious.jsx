@@ -24,7 +24,7 @@ export default class Malicious extends React.Component {
             { alert: "FTP::Bruteforcing", meaning: 27, urgent: "Yes" },
             { alert: "DNS::External_Name", meaning: 27, urgent: "Yes" },
             { alert: "FTP::Site_Exec_Success", meaning: 27, urgent: "Yes" },
-            { alert: "HTTP::SQL_Injection_Attacker", meaning: 27, urgent: "Yes" },
+            { alert: "HTTP::SQL_Injection_Attacker", meaning: "Indicates that a host performing SQL injection attacks was detected.", urgent: "Yes" },
             { alert: "HTTP::SQL_Injection_Victim", meaning: "Indicates that a host was seen to have SQL injection attacks against it. This is tracked by IP address as opposed to hostname.", urgent: "Yes" },
             { alert: "Intel::Notice", meaning: "This notice is generated when an intelligence indicator is denoted to be notice-worthy.", urgent: "No" },
             { alert: "PacketFilter::Dropped_Packets", meaning: "Indicates packets were dropped by the packet filter.", urgent: "Yes" },
@@ -32,12 +32,12 @@ export default class Malicious extends React.Component {
             { alert: "SMTP::Blocklist_Error_Message", meaning: 27, urgent: "Yes" },
             { alert: "SMTP::Suspicious_Origination", meaning: 27, urgent: "Yes" },
             { alert: "SSH::Interesting_Hostname_Login", meaning: 27, urgent: "No" },
-            { alert: "SSH::Login_By_Password_Guesser", meaning: 27, urgent: "Yes" },
-            { alert: "SSH::Password_Guessing", meaning: 27, urgent: "Yes" },
-            { alert: "SSH::Watched_Country_Login", meaning: 27, urgent: "Yes" },
-            { alert: "SSL::Certificate_Expired", meaning: 27, urgent: "Yes" },
-            { alert: "SSL::Certificate_Expires_Soon", meaning: 27, urgent: "No" },
-            { alert: "SSL::Certificate_Not_Valid_Yet", meaning: 27, urgent: "Yes" },
+            { alert: "SSH::Login_By_Password_Guesser", meaning: "Indicates that a host previously identified as a “password guesser” has now had a successful login attempt. ", urgent: "Yes" },
+            { alert: "SSH::Password_Guessing", meaning: "A host on your network is trying to guess a passwrod", urgent: "Yes" },
+            { alert: "SSH::Watched_Country_Login", meaning: "If an SSH login is seen to or from a “watched” country", urgent: "No" },
+            { alert: "SSL::Certificate_Expired", meaning: "Indicates that a certificate’s NotValidAfter date has lapsed and the certificate is now invalid.", urgent: "Yes" },
+            { alert: "SSL::Certificate_Expires_Soon", meaning: "Indicates that a certificate is going to expire within 30 days", urgent: "No" },
+            { alert: "SSL::Certificate_Not_Valid_Yet", meaning: "Indicates that a certificate’s NotValidBefore date is future dated.", urgent: "Yes" },
             { alert: "SSL::Invalid_Server_Cert", meaning: 27, urgent: "Yes" },
             { alert: "Scan::Address_Scan", meaning: 27, urgent: "No" },
             { alert: "Scan::Port_Scan", meaning: 27, urgent: "No" },
@@ -72,7 +72,6 @@ export default class Malicious extends React.Component {
                     scanner tool called Bro Scan, and as you can see in the activities column, Bro Scan has its own
                     names for different activities. We will explain more in detail what each of them means for you!
                 </p>
-                <PageText />
                 <FilterableTable
                     namespace="People"
                     initialSort="name"
@@ -81,6 +80,7 @@ export default class Malicious extends React.Component {
                     noRecordsMessage="There are no records to display"
                     noFilteredRecordsMessage="No people match your filters!"
                 />
+                <PageText />
                 </div>
         );
     }
@@ -121,16 +121,12 @@ const MaliciousTable = () => (
 
 const PageText = () => (
     <div>
-        <h3>What does your network speed mean?</h3>
-        <p>fast is gud, slow is bad</p>
-        <h3>What's a good speed to have?</h3>
-        <p>It very much depends on your needs. Generally one should be seeking at least 
-            25Mbps down and 2Mbps up from their provider. For multiple users such as in a small business
-            , we would recommend 15 Mbps or more per user unless your usage is light or broadband 
-            costs are prohibitive in your area.</p>
-        <h3>Oh no! What if my network is slow?</h3>
-        <p>u fuked</p>
-        <h3>Where can I find out more information on this?</h3>
-        <p>google it</p>
+        <h3>Ah thanks for the explanations, but where can I find out more information?</h3>
+        <p>the internet?</p>
+        <h3>Oh no! What do I do if I have recent urgent alerts?</h3>
+        <p>pray</p>
+        <h3>What's this Bro Scan thing you were talking about earlier? </h3>
+        <p>link to broscan</p>
+        
     </div>
 )
