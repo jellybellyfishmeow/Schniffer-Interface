@@ -15,7 +15,7 @@ export default class NetworkUsage extends React.Component {
 			hAxis: { title: 'time', minValue: 0, maxValue: 15 },
 			vAxis: { title: 'amount', minValue: 0, maxValue: 15 },
 			legend: 'none',
-			backgroundColor: '#E4E4E4',
+			backgroundColor: '#71C2B2',
 		  },
 		  data: [
 			['time', 'amount'],
@@ -37,7 +37,7 @@ export default class NetworkUsage extends React.Component {
 					options={this.state.options}
 					graph_id="usage"
 					width="100%"
-					height="400px"
+					height="450px"
 					legend_toggle
 				/>
 				<p>Looks like you have an average amount of network usage. 

@@ -6,7 +6,6 @@ import * as routes from '../constants/route';
 
 const About = () => (
     <div>
-        <PageNav />
         <Jumbotron className="welp"> 
             <h1>Schniffer</h1>
             <p>

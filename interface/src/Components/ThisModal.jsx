@@ -42,7 +42,8 @@ export default class ThisModal extends React.Component {
             <style type="text/css">{`
             .btn-custom {
                 background-color: #B3E2CC;
-                color: #017989;
+                color: #0B5557;
+                font-weight: bold;
             }
             `}</style>
             <Button bsStyle="custom" bsSize="large" onClick={this.handleShow}>

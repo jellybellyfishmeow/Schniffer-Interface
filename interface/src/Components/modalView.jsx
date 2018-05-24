@@ -1,5 +1,7 @@
 import myTxt from "../myscan.xml";
 import React from "react";
+import { Panel} from 'react-bootstrap';
+
 import { Link } from 'react-router-dom'
 import { Chart } from 'react-google-charts';
 import DevicesModal from "./DevicesModal";
@@ -36,6 +38,7 @@ export default class ModalView extends React.Component {
 					<DeviceTable />
 					<h3>If you are more visual, here you go!</h3>
 					<DevicePie />
+                    <hr />                      
 					<PageText />
 
 				</div>
@@ -47,17 +50,17 @@ const DevicePie = () => (
 		<Chart
           chartType="PieChart"
           data={[['Vendor', 'Count'], ['Apple', 3], ['Linux', 1], ['Windows', 2], ['Unknown', 1]]}
-          options={{title: 'Number of Devices by Vendor', backgroundColor: '#E4E4E4'}}
+          options={{title: 'Number of Devices by Vendor', backgroundColor: '#71C2B2'}}
           graph_id="Piechart"
           width="100%"
           height="400px"
 		  legend_toggle
-		  
         />
+        <hr />                      
 		<Chart
           chartType="PieChart"
           data={[['Type', 'Count'], ['Phone', 2], ['Computer', 3], ['Other', 1], ['Unknown', 1]]}
-          options={{title: 'Number of Devices by Type', backgroundColor: '#E3E3E3'}}
+          options={{title: 'Number of Devices by Type', backgroundColor: '#71C2B2'}}
           graph_id="secondPie"
           width="100%"
           height="400px"
@@ -68,20 +71,64 @@ const DevicePie = () => (
   )
 const PageText = () => (
     <div>
-        <h3>What is NMAP?</h3>
-        <p>NMAP is a tool that scans a network and identifies devices on the network.</p>
-        <h3>What are the unknowns? Scary~~</h3>
-        <p>Unknowns are common, because NMAP isn’t 
+        <Panel className="faq" >
+          <Panel.Heading>
+            <Panel.Title toggle>
+            <h4>What is NMAP?</h4>
+            </Panel.Title>
+          </Panel.Heading>
+          <Panel.Collapse>
+            <Panel.Body>
+            <p>NMAP is a tool that scans a network and identifies 
+              devices on the network.</p>
+            </Panel.Body>
+          </Panel.Collapse>
+        </Panel>
+
+        <Panel className="faq" >
+          <Panel.Heading>
+            <Panel.Title toggle>
+            <h4>What are the unknowns? Scary~~</h4>
+            </Panel.Title>
+          </Panel.Heading>
+          <Panel.Collapse>
+            <Panel.Body>
+            <p>Unknowns are common, because NMAP isn’t 
             able to recognize every single device that exists 
-            on the market. No need to worry about it</p>
-        <h3>What do I do if there's an unfamiliar device?</h3>
-        <p>Ensure that your network is password-protected, and hidden to the outside world.
+            on the market. No need to worry about it!</p>            
+            </Panel.Body>
+          </Panel.Collapse>
+        </Panel>
+
+        <Panel className="faq" >
+          <Panel.Heading>
+            <Panel.Title toggle>
+            <h4>What do I do if there's an unfamiliar device?</h4>
+            </Panel.Title>
+          </Panel.Heading>
+          <Panel.Collapse>
+            <Panel.Body>
+            <p>Ensure that your network is password-protected, and hidden to the outside world.
              You may think about changing your network password while you’re at it. To change 
              your password, refer to the router instructions that came with it. Looking up your 
              router on Google will also point you in the right direction. Make sure that the 
-             security setting on your router is set to WPA2!</p>
-        <h3>What can I do to prevent unauthorized devices on my network?</h3>
-        <p>In addition to what we've discussed above, check out our <Link to={routes.ABOUT}>best 
-        practice</Link> page for more information!</p>
+             security setting on your router is set to WPA2!</p>        
+            </Panel.Body>
+          </Panel.Collapse>
+        </Panel>
+
+        <Panel className="faq" >
+          <Panel.Heading>
+            <Panel.Title toggle>
+            <h4>What can I do to prevent unauthorized devices on my network?</h4>
+            </Panel.Title>
+          </Panel.Heading>
+          <Panel.Collapse>
+            <Panel.Body>
+            <p>In addition to what we've discussed above, check out our <Link to={routes.ABOUT}>best 
+        practice</Link> page for more information!</p>           
+            </Panel.Body>
+          </Panel.Collapse>
+        </Panel>
     </div>
   )

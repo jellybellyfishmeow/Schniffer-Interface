@@ -1,6 +1,8 @@
 import React from "react";
 import { Chart } from 'react-google-charts';
 import myTxt from "../speedtest.log";
+import {Grid, Col, Row} from 'react-bootstrap';
+
 import '../App.css';
 
 class SpeedTest extends React.Component {
@@ -66,13 +68,21 @@ class SpeedTest extends React.Component {
 		return (
 			<div>
 				<p>For this speed test, the ping time was: {this.state.text[0]} ms</p>
-				<Chart 
+				<Grid>
+					<Row>
+						<Col md={1}></Col>
+						<Col md={4}>
+						<Chart
 						chartType="Gauge"
 						data={this.state.data}
 						options={this.state.options}
 						graph_id="gauge"
 						legend_toggle
 				/>
+						</Col>
+					</Row>
+				</Grid>
+				
 				<p>
 					Your current upload speed is {(this.state.text[1])}Mbit/s, and your download speed is 
 					 {(this.state.text[2])}Mbit/s. {this.state.message}

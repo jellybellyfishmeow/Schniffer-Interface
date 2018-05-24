@@ -7,7 +7,6 @@ import {
 import firebase from 'firebase';
 import 'firebase/auth';
 import * as routes from './constants/route';
-import { Col, Row, Grid} from 'react-bootstrap';
 import DashboardActivity from "./Components/DashboardActivity";
 import LoginActivity from "./Components/LoginActivity";
 import About from "./Components/about";
@@ -17,6 +16,7 @@ import Navigation from './Components/Navigation';
 import PrivateRoute from './Components/PrivateRoute';
 import Malicious from './Components/malicious';
 import ModalView from './Components/modalView';
+import {Footer, Container} from 'mdbreact';
 
 export default class App extends Component {
   constructor(props) {
@@ -58,9 +58,7 @@ export default class App extends Component {
             <div className="total">
               <Navigation />
               <hr/>
-              <Grid>
-                <Row className="show-grid">
-                  <Col xs={12} md={10} mdOffset={1}>
+             
                   <PrivateRoute exact path="/" 
               component={DashboardActivity} 
               authenticated={this.state.authenticated}/>
@@ -90,13 +88,25 @@ export default class App extends Component {
                 exact path={routes.ABOUT}
                 component={() => <About />}
               />
-                  </Col>
-                </Row>
-              </Grid>
-              
-            
+              <hr />
+              <Foot />
             </div>
           </Router>
       )
     }
   }
+
+
+  const Foot = () => (
+    <div className="foot">
+        <div className="footer-copyright text-center">
+          <Container fluid>
+              &copy; {(new Date().getFullYear())} Copyright: Jingyu Yang & Jason Peacher-Ton
+              <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from
+               <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed
+                by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" 
+                target="_blank">CC 3.0 BY</a></div>
+          </Container>
+      </div>
+      </div>
+  )

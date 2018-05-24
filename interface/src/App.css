@@ -4,6 +4,8 @@
 
 .total {
   padding: 20px 90px 0px 90px;
+  padding-bottom: 30px;
+
   margin-top: 50px;
   background: #C0FFED;
 }
@@ -11,6 +13,9 @@
   font-size: large;
 }
 
+hr {
+  color: #C0FFED;
+}
 p {
   font-size: 16px;
 }
@@ -25,12 +30,6 @@ p {
 
 }
 
-.sTest{
-  margin:auto;
-  width: 50%;
-    border: 3px solid green;
-    padding: 10px;
-}
 .sub {
   font-size: 15px;
 }
@@ -38,6 +37,30 @@ p {
 a {
   color: #0B5F39;
   text-decoration-style: none;
+}
+.currDate{
+  color: #04376B;
+  font-weight: bold;
+
+}
+.foot {
+  background-color: #017989;
+  width:100%;
+  bottom:0;
+  left:0;
+  position: fixed;;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+}
+
+.icon {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 40%;
 }
 
 .navMain {
@@ -54,6 +77,10 @@ a {
   display:inline-block;
 }
 .table {
+  background: #8FDEBC
+}
+
+.faq {
   background: #8FDEBC
 }
 @keyframes App-logo-spin {

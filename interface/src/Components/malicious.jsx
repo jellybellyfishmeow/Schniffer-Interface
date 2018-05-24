@@ -1,5 +1,5 @@
 import React from "react";
-import { Table} from 'react-bootstrap';
+import { Table, Panel} from 'react-bootstrap';
 import FilterableTable from "react-filterable-table";
 
 
@@ -17,28 +17,27 @@ export default class Malicious extends React.Component {
  
         // Data for the table to display; can be anything
         let data = [
-            { alert: "CaptureLoss::Too_Much_Loss", meaning: 27, urgent: "No" },
-            { alert: "Conn::Ack_Above_Hole", meaning: 27, urgent: "" },
-            { alert: "Conn::Content_Gap", meaning: 27, urgent: "" },
-            { alert: "Conn::Retransmission_Inconsistency", meaning: 27, urgent: "" },
-            { alert: "FTP::Bruteforcing", meaning: 27, urgent: "Yes" },
-            { alert: "DNS::External_Name", meaning: 27, urgent: "" },
-            { alert: "FTP::Site_Exec_Success", meaning: 27, urgent: "Yes" },
+            { alert: "CaptureLoss::Too_Much_Loss", meaning: "Bro has dropped too many packets when monitoring the network", urgent: "No" },
+            { alert: "Conn::Content_Gap", meaning: "Data has sequence hole; perhaps due to filtering", urgent: "no" },
+            { alert: "Conn::Retransmission_Inconsistency", meaning: "Possible evasion; usually just chud", urgent: "no" },
+            { alert: "FTP::Bruteforcing", meaning: "Indicates a host bruteforcing FTP logins by watching for too many rejected usernames or failed passwords", urgent: "Yes" },
+            { alert: "DNS::External_Name", meaning: "Raised when a non-local name is found to be pointing at a local host.", urgent: "yes" },
+            { alert: "FTP::Site_Exec_Success", meaning: "Indicates that a successful response to a “SITE EXEC” command/arg pair was seen.", urgent: "Yes" },
             { alert: "HTTP::SQL_Injection_Attacker", meaning: "Indicates that a host performing SQL injection attacks was detected.", urgent: "Yes" },
             { alert: "HTTP::SQL_Injection_Victim", meaning: "Indicates that a host was seen to have SQL injection attacks against it. This is tracked by IP address as opposed to hostname.", urgent: "Yes" },
             { alert: "Intel::Notice", meaning: "This notice is generated when an intelligence indicator is denoted to be notice-worthy.", urgent: "No" },
-            { alert: "PacketFilter::Dropped_Packets", meaning: "Indicates packets were dropped by the packet filter.", urgent: "Yes" },
-            { alert: "SMTP::Blocklist_Blocked_Host", meaning: 27, urgent: "Yes" },
-            { alert: "SMTP::Blocklist_Error_Message", meaning: 27, urgent: "Yes" },
-            { alert: "SMTP::Suspicious_Origination", meaning: 27, urgent: "Yes" },
-            { alert: "SSH::Interesting_Hostname_Login", meaning: 27, urgent: "No" },
+            { alert: "PacketFilter::Dropped_Packets", meaning: "Indicates packets were dropped by the packet filter.", urgent: "no" },
+            { alert: "SMTP::Blocklist_Blocked_Host", meaning: "The originator’s address is seen in the block list error message. This is useful to detect local hosts sending SPAM with a high positive rate.", urgent: "No" },
+            { alert: "SMTP::Blocklist_Error_Message", meaning: "An SMTP server sent a reply mentioning an SMTP block list.", urgent: "no" },
+            { alert: "SMTP::Suspicious_Origination", meaning: "Request came from a suspicious area (country)", urgent: "No" },
+            { alert: "SSH::Interesting_Hostname_Login", meaning: "A hostname that matches a previously defined list has attempted to access your network", urgent: "No" },
             { alert: "SSH::Login_By_Password_Guesser", meaning: "Indicates that a host previously identified as a “password guesser” has now had a successful login attempt. ", urgent: "Yes" },
-            { alert: "SSH::Password_Guessing", meaning: "A host on your network is trying to guess a passwrod", urgent: "Yes" },
-            { alert: "SSH::Watched_Country_Login", meaning: "If an SSH login is seen to or from a “watched” country", urgent: "No" },
+            { alert: "SSH::Password_Guessing", meaning: "A host on your network is trying to guess a password", urgent: "Yes" },
+            { alert: "SSH::Watched_Country_Login", meaning: "If an SSH login is seen to or from a “watched” country", urgent: "Yes" },
             { alert: "SSL::Certificate_Expired", meaning: "Indicates that a certificate’s NotValidAfter date has lapsed and the certificate is now invalid.", urgent: "Yes" },
             { alert: "SSL::Certificate_Expires_Soon", meaning: "Indicates that a certificate is going to expire within 30 days", urgent: "No" },
             { alert: "SSL::Certificate_Not_Valid_Yet", meaning: "Indicates that a certificate’s NotValidBefore date is future dated.", urgent: "Yes" },
-            { alert: "SSL::Invalid_Server_Cert", meaning: 27, urgent: "Yes" },
+            { alert: "SSL::Invalid_Server_Cert", meaning: "The result of validating the certificate along with its full certificate chain was invalid.", urgent: "Yes" },
             { alert: "Scan::Address_Scan", meaning: 27, urgent: "No" },
             { alert: "Scan::Port_Scan", meaning: 27, urgent: "No" },
             { alert: "Signatures::Count_Signature", meaning: 27, urgent: "" },
@@ -52,6 +51,7 @@ export default class Malicious extends React.Component {
             { alert: "Notice::Tally", meaning: "Generic unusual but notice-worthy weird activity", urgent: "No" },
 
         ];
+
         
         // Fields to show in the table, and what object properties in the data they bind to
         let fields = [
@@ -62,10 +62,11 @@ export default class Malicious extends React.Component {
         ];
         return(
             <div>
-                <p>As of {this.state.d}, here are the suspicious activity and alerts caught by Schniffer, 
+                <p>As of <span className="currDate">{this.state.d}</span>, here are the suspicious activity and alerts caught by Schniffer, 
                 sorted by date of detection</p>
                 <p>To stay up-to-date on realtime alerts, set up email alerts in your account settings!</p>
                 <MaliciousTable />
+                <hr />
                 <h3>Confused? Don't worry!</h3>
                 <p>Schniffer scans your network in realtime for anything suspicious or just, plain old weird, 
                     and we save the scanner alerts into a log, which is what you are seeing here! We use a network
@@ -121,19 +122,51 @@ const MaliciousTable = () => (
 
 const PageText = () => (
     <div>
-        <h3>Ah thanks for the explanations, but where can I find out more information?</h3>
-        <p>If you are curious about the details of the detected issue, copying the issue 
-            name and searching for it on Google will give you a lot of insight into what the issue means. </p>
-        <h3>Oh no! What do I do if I have recent urgent alerts?</h3>
-        <p>Schniffer’s purpose as a detection device means that it should be paired with trained professionals 
+        <Panel className="faq" defaultExpanded>
+          <Panel.Heading>
+            <Panel.Title toggle>
+            <h4>Ah thanks for the explanations, but where can I find out more information?</h4>
+            </Panel.Title>
+          </Panel.Heading>
+          <Panel.Collapse>
+            <Panel.Body>
+            <p>If you are curious about the details of the detected issue, copying the issue 
+            name and searching for it on Google will give you a lot of insight into what the 
+            issue means.</p>        
+            </Panel.Body>
+          </Panel.Collapse>
+        </Panel>
+
+        <Panel className="faq" defaultExpanded>
+          <Panel.Heading>
+            <Panel.Title toggle>
+            <h4>Oh no! What do I do if I have recent urgent alerts?</h4>
+            </Panel.Title>
+          </Panel.Heading>
+          <Panel.Collapse>
+            <Panel.Body>
+            <p>Schniffer’s purpose as a detection device means that it should be paired with trained professionals 
             in network security. Notifying them when you receive an urgent alert will keep your business safe 
             and generally make their work faster to complete. Early detection is critical to safeguarding your 
-            business and responding to potential threats should always be taken seriously.</p>
-        <h3>What's this Bro Scan thing you were talking about earlier? </h3>
-        <p>Bro is an Intrusion Detection System. This means that it monitors all of your network traffic looking 
+            business and responding to potential threats should always be taken seriously.</p>     
+            </Panel.Body>
+          </Panel.Collapse>
+        </Panel>
+
+        <Panel className="faq" defaultExpanded>
+          <Panel.Heading>
+            <Panel.Title toggle>
+            <h4>What's this Bro Scan thing you were talking about earlier?</h4>
+            </Panel.Title>
+          </Panel.Heading>
+          <Panel.Collapse>
+            <Panel.Body>
+            <p>Bro is an Intrusion Detection System. This means that it monitors all of your network traffic looking 
             for potentially dangerous threats. It is designed to give warnings when dangerous traffic is found, 
             so that the network owner can respond to them immediately. For more information, check out their 
-            <a href="https://www.bro.org/index.html"> website!</a></p>
-        
+            <a href="https://www.bro.org/index.html"> website!</a></p>     
+            </Panel.Body>
+          </Panel.Collapse>
+        </Panel>
     </div>
 )

@@ -10,6 +10,7 @@
     "firebase": "^4.13.1",
     "fs": "0.0.1-security",
     "level-filesystem": "^1.2.0",
+    "mdbreact": "^4.4.0",
     "react": "^16.4.0",
     "react-bootstrap": "^0.32.1",
     "react-chartjs-2": "^2.7.2",
