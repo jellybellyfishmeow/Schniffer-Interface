@@ -122,9 +122,11 @@ const MaliciousTable = () => (
 const PageText = () => (
     <div>
         <h3>Ah thanks for the explanations, but where can I find out more information?</h3>
-        <p>the internet?</p>
+        <p>If you are curious about the details of the detected issue, copying the issue 
+            name and searching for it on Google will give you a lot of insight into what the issue means. </p>
         <h3>Oh no! What do I do if I have recent urgent alerts?</h3>
-        <p>pray</p>
+        <p>Schniffer’s purpose as a detection device means that it should be paired with trained professionals 
+            in network security. Notifying them when you receive an urgent alert will keep your business safe and generally make their work faster to complete. Early detection is critical to safeguarding your business and responding to potential threats should always be taken seriously.</p>
         <h3>What's this Bro Scan thing you were talking about earlier? </h3>
         <p>link to broscan</p>
         
