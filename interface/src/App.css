@@ -11,13 +11,28 @@
   font-size: large;
 }
 
+p {
+  font-size: 16px;
+}
 .aboutNav {
   background: rgb(243, 149, 125);
   font-family: 'Oxygen', sans-serif;
 
 }
-.welp {
-  background: turquoise
+.devices {
+  background: #71C2B2;
+  padding: 20px 20px 20px 20px;
+
+}
+
+.sTest{
+  margin:auto;
+  width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+}
+.sub {
+  font-size: 15px;
 }
 
 a {

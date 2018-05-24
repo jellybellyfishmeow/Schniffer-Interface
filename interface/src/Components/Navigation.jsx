@@ -62,9 +62,7 @@ const NavigationAuth = () => (
                 <NavItem eventKey={1}>
                   <Link className="NavLink" to={routes.LANDING}>Dashboard</Link>
                 </NavItem>
-                <NavItem eventKey={2} >
-                  <Link className="NavLink" to={routes.USAGE}>Network Usage</Link>
-                </NavItem>
+                
                 <NavItem eventKey={3}>
                   <Link className="NavLink" to={routes.MALICIOUS}>Suspicious Activity Log</Link>                
                 </NavItem>
@@ -77,7 +75,7 @@ const NavigationAuth = () => (
             </Nav>
             <Nav pullRight>
               <NavItem eventKey={4}>
-                <Link className="NavLink" to={routes.ABOUT}>About</Link>
+                <Link className="NavLink" to={routes.ABOUT}>Best Practices</Link>
               </NavItem>
               <NavItem eventKey={5}>
                 <button className="btn log" onClick={() => firebase.auth().signOut().catch(err => alert(err.message))}>log out</button>

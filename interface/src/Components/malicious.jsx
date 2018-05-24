@@ -126,9 +126,14 @@ const PageText = () => (
             name and searching for it on Google will give you a lot of insight into what the issue means. </p>
         <h3>Oh no! What do I do if I have recent urgent alerts?</h3>
         <p>Schniffer’s purpose as a detection device means that it should be paired with trained professionals 
-            in network security. Notifying them when you receive an urgent alert will keep your business safe and generally make their work faster to complete. Early detection is critical to safeguarding your business and responding to potential threats should always be taken seriously.</p>
+            in network security. Notifying them when you receive an urgent alert will keep your business safe 
+            and generally make their work faster to complete. Early detection is critical to safeguarding your 
+            business and responding to potential threats should always be taken seriously.</p>
         <h3>What's this Bro Scan thing you were talking about earlier? </h3>
-        <p>link to broscan</p>
+        <p>Bro is an Intrusion Detection System. This means that it monitors all of your network traffic looking 
+            for potentially dangerous threats. It is designed to give warnings when dangerous traffic is found, 
+            so that the network owner can respond to them immediately. For more information, check out their 
+            <a href="https://www.bro.org/index.html"> website!</a></p>
         
     </div>
 )

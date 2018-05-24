@@ -1,6 +1,8 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import DChart from "./Chart";
+import { Grid, Col, Row} from 'react-bootstrap';
+import { Card, CardText, CardBody,
+    CardTitle, CardSubtitle } from 'reactstrap';
 import SpeedTest from "./SpeedTest";
 import NetworkUsage from "./NetworkUsage";
 import ThisModal from "./ThisModal";
@@ -17,17 +19,35 @@ export default class DashboardActivity extends React.Component {
     render() {
         
         return (
-            <div>
+            <div className>
+                <Grid>
+                    <Row className="show-grid">
+                        <Col xs={12} md={4}>
+                            <Card className="devices">
+                                <CardBody >
+                                    <CardTitle><h3>Network Devices</h3></CardTitle>
+                                    <CardSubtitle className="sub">Overview of Devices on your network</CardSubtitle>
+                                    <CardText><h4>You currently have <span><DevicesModal /> </span>devices on your network</h4></CardText>
+                                    <ThisModal />
+                                </CardBody>
+                            </Card>
+                        </Col>
+                        <Col xs={12} md={7}>
+                            <Card className="devices">
+                                <SpeedTest className="sTest" />  
+                            </Card>                     
+                        </Col>
+                        <Col xs={12} md={1}>
+                        </Col>
+                    </Row>
+                </Grid>
                 <div className="cont d-flex justify-content-center" >              
                     <div className="card align-self-center">
-        <h4>You currently have <span><DevicesModal /> </span>devices on your network</h4>
-                    <ThisModal />
+       
                       <hr />                      
                       <NetworkUsage />    
                         <hr />
-                          <DChart />
-                        <hr />
-                        <SpeedTest />
+                        
                       </div>
                   </div>
             </div>

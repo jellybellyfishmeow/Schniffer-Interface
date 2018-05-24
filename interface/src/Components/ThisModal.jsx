@@ -33,15 +33,23 @@ export default class ThisModal extends React.Component {
         </Popover>
       );
       const tooltip = <Tooltip id="modal-tooltip">wow.</Tooltip>;
-  
+
+
       return (
         <div>
           <p>View the list of devices</p>
-  
-          <Button bsStyle="primary" bsSize="large" onClick={this.handleShow}>
+          <div>
+            <style type="text/css">{`
+            .btn-custom {
+                background-color: #B3E2CC;
+                color: #017989;
+            }
+            `}</style>
+            <Button bsStyle="custom" bsSize="large" onClick={this.handleShow}>
             View Devices
           </Button>
-  
+          </div>
+          
           <Modal show={this.state.show} onHide={this.handleClose}>
             <Modal.Header closeButton>
               <Modal.Title>List of Devices*</Modal.Title>
