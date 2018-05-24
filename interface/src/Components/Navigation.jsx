@@ -38,14 +38,14 @@ export default class Navigation extends React.Component {
 const NavigationNonAuth = () => (
   <Navbar fixedTop className="navMain">
     <Navbar.Header>
-      <Link to={routes.LANDING}><Image src="./meow.png" height="50" width="199" href="/" /></Link>
+      <Link className="NavLink" to={routes.LANDING}><Image src="./meow.png" height="40" width="150" href="/" /></Link>
     </Navbar.Header>
     <Nav pullRight>
       <NavItem eventKey={1}>
-        <Link to={routes.ABOUT}>About</Link>
+        <Link className="NavLink" to={routes.ABOUT}>About</Link>
       </NavItem>
       <NavItem eventKey={2}>
-        <Link to={routes.SIGN_IN}>Sign In</Link>
+        <Link className="NavLink" to={routes.SIGN_IN}>Sign In</Link>
       </NavItem>
       
     </Nav>
@@ -56,7 +56,7 @@ const NavigationAuth = () => (
     <div>
         <Navbar fixedTop className="navMain">
             <Navbar.Header>
-                <Link className="NavLink" to={routes.LANDING}><Image src="./meow.png" height="50" width="199" href="/" /></Link>
+                <Link className="NavLink" to={routes.LANDING}><Image src="./meow.png" height="40" width="150" href="/" /></Link>
             </Navbar.Header>
             <Nav>
                 <NavItem eventKey={1}>
