@@ -5,7 +5,7 @@
 .total {
   padding: 20px 90px 0px 90px;
   margin-top: 50px;
-  background: rgba(97, 217, 213, 0.5);
+  background: #C0FFED;
 }
 .App-intro {
   font-size: large;
@@ -21,13 +21,13 @@
 }
 
 a {
-  color: lightsalmon;
+  color: #0B5F39;
 }
 
 .navMain {
-  background: rgb(243, 149, 125);
+  background: #0294A8;
   font-family: 'Oxygen', sans-serif;
-  color: black;
+  color:  #0294A8;
 }
 
 .NavLink {

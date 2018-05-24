@@ -7,6 +7,7 @@ import {
 import firebase from 'firebase';
 import 'firebase/auth';
 import * as routes from './constants/route';
+import { Col, Row, Grid} from 'react-bootstrap';
 import DashboardActivity from "./Components/DashboardActivity";
 import LoginActivity from "./Components/LoginActivity";
 import About from "./Components/about";
@@ -57,8 +58,10 @@ export default class App extends Component {
             <div className="total">
               <Navigation />
               <hr/>
-              
-              <PrivateRoute exact path="/" 
+              <Grid>
+                <Row className="show-grid">
+                  <Col xs={12} md={10} mdOffset={1}>
+                  <PrivateRoute exact path="/" 
               component={DashboardActivity} 
               authenticated={this.state.authenticated}/>
               
@@ -87,6 +90,10 @@ export default class App extends Component {
                 exact path={routes.ABOUT}
                 component={() => <About />}
               />
+                  </Col>
+                </Row>
+              </Grid>
+              
             
             </div>
           </Router>
