@@ -11,7 +11,6 @@ import DashboardActivity from "./Components/DashboardActivity";
 import LoginActivity from "./Components/LoginActivity";
 import About from "./Components/about";
 import SpeedTestPage from './Components/SpeedTestPage';
-import NetworkUsage from './Components/NetworkUsage';
 import Navigation from './Components/Navigation';
 import PrivateRoute from './Components/PrivateRoute';
 import Malicious from './Components/malicious';
@@ -68,11 +67,7 @@ export default class App extends Component {
               <PrivateRoute exact path="/speedtest" 
               component={SpeedTestPage} 
               authenticated={this.state.authenticated}/>
-              
-              <PrivateRoute exact path="/networkusage" 
-              component={NetworkUsage} 
-              authenticated={this.state.authenticated}/>
-            
+             
             <PrivateRoute exact path="/devices" 
               component={ModalView} 
               authenticated={this.state.authenticated}/>

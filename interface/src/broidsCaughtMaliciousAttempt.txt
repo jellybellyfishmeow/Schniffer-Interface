@@ -1,0 +1,14 @@
+1526671153000 MgaH1dgw96c 192.168.245.1 51684 192.168.245.128 80 tcp
+HTTP::SQL_URI_Injection_Attack SQL Attack from 192.168.245.1 to destination: 192.168.245.128 with Attack
+string /dvwa/vulnerabilities/sqli_blind/?id=5+and+substring(@@version,1,1)=5&Submit=Submit -
+192.168.245.1 192.168.245.128 80 - bro Notice::ACTION_LOG 6 3600.000000 F
+
+1526269583000 MgaH1dgw96c 192.168.245.1 51684 192.168.245.128 80 tcp
+HTTP::SQL_URI_Injection_Attack SQL Attack from 192.168.245.1 to destination: 192.168.245.128 with Attack
+string /dvwa/vulnerabilities/sqli_blind/?id=5+and+substring(@@version,1,1)=5&Submit=Submit -
+192.168.245.1 192.168.245.128 80 - bro Notice::ACTION_LOG 6 3600.000000 F
+
+1526111122000 MgaH1dgw96c 192.168.245.1 51684 192.168.245.128 80 tcp
+HTTP::SQL_URI_Injection_Attack SQL Attack from 192.168.245.1 to destination: 192.168.245.128 with Attack
+string /dvwa/vulnerabilities/sqli_blind/?id=5+and+substring(@@version,1,1)=5&Submit=Submit -
+192.168.245.1 192.168.245.128 80 - bro Notice::ACTION_LOG 6 3600.000000 F

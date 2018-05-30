@@ -69,7 +69,13 @@ a {
   margin-bottom: 20px;
   width: 40%;
 }
-
+.bestP {
+  background-color: #B3E2CC;
+  padding: 40px;
+}
+.bestP h4 {
+  color: #04376B;
+}
 .navMain {
   background: #0294A8;
   font-family: 'Oxygen', sans-serif;
@@ -86,6 +92,10 @@ a {
 
 .table {
   background: #8FDEBC
+}
+
+.devices h3 {
+  color: #04376B
 }
 
 .faq {
