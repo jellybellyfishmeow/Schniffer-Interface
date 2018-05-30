@@ -1,0 +1,113 @@
+Nmap scan report for 10.0.0.1
+Host is up (0.0018s latency).
+Not shown: 993 closed ports
+PORT      STATE    SERVICE
+22/tcp    filtered ssh
+23/tcp    filtered telnet
+53/tcp    open     domain
+80/tcp    open     http
+443/tcp   open     https
+2601/tcp  open     zebra
+49152/tcp open     unknown
+MAC Address: B0:DA:F9:23:7F:D4 (Arris Group)
+Device type: general purpose
+Running: Linux 3.X|4.X
+OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4
+OS details: Linux 3.2 - 4.9
+Uptime guess: 13.654 days (since Tue May  8 06:33:11 2018)
+Network Distance: 1 hop
+TCP Sequence Prediction: Difficulty=261 (Good luck!)
+IP ID Sequence Generation: All zeros
+
+Nmap scan report for 10.0.0.140
+Host is up (0.0044s latency).
+Not shown: 999 closed ports
+PORT      STATE SERVICE
+62078/tcp open  iphone-sync
+MAC Address: 4C:7C:5F:89:83:6F (Apple)
+Device type: phone
+Running: Apple iOS 11.X
+OS CPE: cpe:/o:apple:iphone_os:11.0
+OS details: Apple iOS 11.0
+Uptime guess: 6.335 days (since Tue May 15 14:12:26 2018)
+Network Distance: 1 hop
+TCP Sequence Prediction: Difficulty=264 (Good luck!)
+IP ID Sequence Generation: All zeros
+
+Nmap scan report for 10.0.0.202
+Host is up (0.0061s latency).
+Not shown: 999 filtered ports
+PORT     STATE SERVICE
+2869/tcp open  icslap
+MAC Address: 58:82:A8:2F:74:BF (Microsoft)
+Warning: OSScan results may be unreliable because we could not find at least 1 o                                                       pen and 1 closed port
+Device type: general purpose
+Running (JUST GUESSING): Microsoft Windows 2008 (85%)
+OS CPE: cpe:/o:microsoft:windows_server_2008::sp1 cpe:/o:microsoft:windows_serve                                                       r_2008:r2
+Aggressive OS guesses: Microsoft Windows Server 2008 SP1 or Windows Server 2008                                                        R2 (85%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 1 hop
+TCP Sequence Prediction: Difficulty=252 (Good luck!)
+IP ID Sequence Generation: Incremental
+
+Nmap scan report for 10.0.0.240
+Host is up (0.00042s latency).
+Not shown: 999 filtered ports
+PORT     STATE SERVICE
+2869/tcp open  icslap
+MAC Address: 4C:CC:6A:45:32:E1 (Micro-star Intl)
+Warning: OSScan results may be unreliable because we could not find at least 1 o                                                       pen and 1 closed port
+Device type: specialized|general purpose
+Running (JUST GUESSING): AVtech embedded (87%), Microsoft Windows XP (87%), Free                                                       BSD 6.X|10.X (86%)
+OS CPE: cpe:/o:microsoft:windows_xp::sp2 cpe:/o:freebsd:freebsd:6.2 cpe:/o:freeb                                                       sd:freebsd:10.3
+Aggressive OS guesses: AVtech Room Alert 26W environmental monitor (87%), Micros                                                       oft Windows XP SP2 (87%), FreeBSD 6.2-RELEASE (86%), FreeBSD 10.3-STABLE (85%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 1 hop
+TCP Sequence Prediction: Difficulty=256 (Good luck!)
+IP ID Sequence Generation: Incremental
+
+Nmap scan report for 10.0.0.252
+Host is up (0.0031s latency).
+Not shown: 997 filtered ports
+PORT    STATE SERVICE
+135/tcp open  msrpc
+139/tcp open  netbios-ssn
+445/tcp open  microsoft-ds
+MAC Address: 30:3A:64:B4:72:F6 (Intel Corporate)
+Warning: OSScan results may be unreliable because we could not find at least 1 o                                                       pen and 1 closed port
+Device type: general purpose
+Running (JUST GUESSING): Microsoft Windows 2008 (86%)
+OS CPE: cpe:/o:microsoft:windows_server_2008::sp1 cpe:/o:microsoft:windows_serve                                                       r_2008:r2
+Aggressive OS guesses: Microsoft Windows Server 2008 SP1 or Windows Server 2008                                                        R2 (86%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 1 hop
+TCP Sequence Prediction: Difficulty=252 (Good luck!)
+IP ID Sequence Generation: Incremental
+
+Nmap scan report for 10.0.0.254
+Host is up (0.00043s latency).
+All 1000 scanned ports on 10.0.0.254 are closed
+MAC Address: B0:DA:F9:23:7F:D5 (Arris Group)
+Too many fingerprints match this host to give specific OS details
+Network Distance: 1 hop
+
+Initiating SYN Stealth Scan at 22:15
+Scanning 10.0.0.217 [1000 ports]
+Discovered open port 22/tcp on 10.0.0.217
+Discovered open port 80/tcp on 10.0.0.217
+Completed SYN Stealth Scan at 22:15, 0.15s elapsed (1000 total ports)
+Initiating OS detection (try #1) against 10.0.0.217
+Nmap scan report for 10.0.0.217
+Host is up (0.00011s latency).
+Not shown: 998 closed ports
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+Device type: general purpose
+Running: Linux 3.X|4.X
+OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4
+OS details: Linux 3.8 - 4.4
+Uptime guess: 0.010 days (since Mon May 21 22:01:18 2018)
+Network Distance: 0 hops
+TCP Sequence Prediction: Difficulty=260 (Good luck!)
+IP ID Sequence Generation: All zeros

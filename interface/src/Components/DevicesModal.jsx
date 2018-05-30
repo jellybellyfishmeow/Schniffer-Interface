@@ -1,4 +1,4 @@
-import myTxt from "../myscan.xml";
+import myTxt from "../exampleOSOutput.txt";
 import React from "react";
 import { Chart } from 'react-google-charts';
 import ModalView from './modalView';
@@ -27,7 +27,7 @@ export default class DevicesModal extends React.Component {
 				if (rawFile.status === 200 || rawFile.status === 0) {
 					const allText = rawFile.responseText;
 					this.setState({
-						text: allText.split("vendor=\"").map((item) => {
+						text: allText.split("Nmap").map((item) => {
 							return item.split("/>");
 						})
 					});
@@ -50,11 +50,9 @@ export default class DevicesModal extends React.Component {
 
 	  render() {
 			return (
-				<span>7</span>
-				// <div>
-				// 	{/*this.state.text.length - 1*/}
-					
-				// </div>
+				<span>
+				{this.state.text.length - 1}
+				</span>
 			);
 	  }
 }
