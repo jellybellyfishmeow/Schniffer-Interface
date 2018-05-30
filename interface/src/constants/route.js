@@ -6,3 +6,4 @@ export const DEVICES = '/devices';
 export const SPEED = '/speedtest';
 export const ABOUT = '/about';
 export const MALICIOUS = '/malicious';
+export const BEST = '/best'

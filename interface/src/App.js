@@ -17,6 +17,8 @@ import PrivateRoute from './Components/PrivateRoute';
 import Malicious from './Components/malicious';
 import ModalView from './Components/modalView';
 import {Footer, Container} from 'mdbreact';
+import BestPractices from './Components/bestPractice';
+import SignUp from './Components/SignUpActivity';
 
 export default class App extends Component {
   constructor(props) {
@@ -83,10 +85,17 @@ export default class App extends Component {
                 exact path={routes.SIGN_IN}
                 component={() => <LoginActivity />}
               />
-            
+            <Route
+                exact path={routes.SIGN_UP}
+                component={() => <SignUp  />}
+              />
               <Route
                 exact path={routes.ABOUT}
                 component={() => <About />}
+              />
+              <Route
+                exact path={routes.BEST}
+                component={() => <BestPractices />}
               />
               <hr />
               <Foot />

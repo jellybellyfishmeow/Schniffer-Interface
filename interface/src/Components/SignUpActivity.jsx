@@ -1,11 +1,15 @@
 import React from "react";
-import { Link, Redirect } from 'react-router-dom';
-import firebase from "firebase/app";
-import {auth} from "firebase/app"
+import { Link, Redirect, withRouter } from 'react-router-dom';
+import firebase from 'firebase';
+import 'firebase/auth';import * as routes from '../constants/route';
 
-import * as routes from '../constants/route';
 
-export default class SignUpActivity extends React.Component {
+const SignUp = ({ history }) =>
+  <div>
+    <SignUpActivity history={history} />
+  </div>
+
+class SignUpActivity extends React.Component {
     constructor(props) {
         super(props);
 
@@ -22,7 +26,9 @@ export default class SignUpActivity extends React.Component {
     // Handle the event when the user presses sign up. Try to create a user with given inputs.
     handleSubmit(evt) {
         evt.preventDefault();
-
+        const {
+            history,
+          } = this.props;
         // Handle empty inputs or invalid inputs.
         if (this.state.email === "" || this.state.displayName === "" || this.state.password === ""
          || this.state.passwordVerify !== this.state.password) {
@@ -38,6 +44,7 @@ export default class SignUpActivity extends React.Component {
                         displayName: this.state.displayName,
                     }).then(() => {
                         this.setState({authenticated: true});
+                        history.push(routes.LANDING);
                     }).then(() => {
                       // add user to database for future Favorites
                       firebase.database().ref("users").child(user.uid).set({
@@ -59,12 +66,12 @@ export default class SignUpActivity extends React.Component {
         
         // Redirect if authenticated
         if (this.state.authenticated) {
-            this.history.push(routes.LANDING);
+            this.props.history.push("/")
         }
 
         return (
             <div>
-             <div className="cont d-flex justify-content-center">
+             <div className="cont d-flex justify-content-center" >
                     <div className="card align-self-center">
                         <div className="card-block p-5">
                             <h2>Sign Up</h2>
@@ -106,7 +113,7 @@ export default class SignUpActivity extends React.Component {
                             </form>
 
                             {/* Give the option to Sign into existing account. */}
-                            <p>Already have an account? <Link to='/login'>Sign in!</Link></p>
+                            <p>Already have an account? <Link to={routes.SIGN_IN}>Sign in!</Link></p>
                         </div>
                     </div>
                 </div>
@@ -114,3 +121,8 @@ export default class SignUpActivity extends React.Component {
         );
     }
 }
+export default withRouter(SignUp);
+
+export {
+  SignUpActivity,
+};

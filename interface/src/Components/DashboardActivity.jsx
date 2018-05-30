@@ -1,12 +1,13 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import { Image, Grid, Col, Row} from 'react-bootstrap';
+import { Image, Grid, Button, Col, Row} from 'react-bootstrap';
 import { Card, CardText, CardBody,
     CardTitle, CardSubtitle } from 'reactstrap';
 import SpeedTest from "./SpeedTest";
-import NetworkUsage from "./NetworkUsage";
 import ThisModal from "./ThisModal";
 import DevicesModal from "./DevicesModal";
+import Tip from "./TOTD";
+import * as routes from '../constants/route';
 
 
 export default class DashboardActivity extends React.Component {
@@ -15,7 +16,7 @@ export default class DashboardActivity extends React.Component {
         this.state = {   
         }
     }
-    
+
     render() {
         
         return (
@@ -25,38 +26,12 @@ export default class DashboardActivity extends React.Component {
                         <Col xs={12} md={4}>
                             <Card className="devices">
                                 <CardBody >
-                                    <CardTitle><h3>Network Devices</h3></CardTitle>
-                                    <CardSubtitle className="sub">Overview of Devices on your network</CardSubtitle>
-                                </CardBody>
-                                <Image className="icon" src="./devices.png" height="120" width="120" />
-                                <CardBody>
-                                    <CardText><h4>You currently have <span><DevicesModal /> </span>devices on your network</h4></CardText>
-                                    <ThisModal />
-                                </CardBody>
-                            </Card>
-                        </Col>
-                        <Col xs={12} md={8}>
-                            <Card className="devices">
-                                <SpeedTest className="icon" />  
-                            </Card>                     
-                        </Col>
-                        
-                    </Row>
-                    <hr />
-                    <Row className="show-grid">
-                        <Col xs={12} md={4}>
-                            <Card className="devices">
-                                <CardBody >
                                     <CardTitle><h3>Tip of the Day</h3></CardTitle>
                                     <CardSubtitle className="sub">What you can do to improve your security!</CardSubtitle>
                                 </CardBody>
                                 <Image className="icon" src="./elemental-tip.png" height="120" width="120" />
                                 <CardBody>
-                                    <CardText><p>Establish basic security practices and policies for employees, such as 
-                                        requiring strong passwords, and establish appropriate Internet use guidelines
-                                         that detail penalties for violating company cybersecurity policies. Establish 
-                                         rules of behavior describing how to handle and protect customer information and
-                                          other vital data.</p></CardText>
+                                    <CardText><Tip /></CardText>
                                 </CardBody>
                             </Card>
                         </Col>
@@ -70,6 +45,14 @@ export default class DashboardActivity extends React.Component {
                                 <CardBody>
                                     <CardText><p>Based on the number of alerts you have, and your network speed, your 
                                         current network grade is <span>A-</span>. Keep up the good work!</p></CardText>
+                                    <style type="text/css">{`
+                                    .btn-custom {
+                                        background-color: #B3E2CC;
+                                        color: #0B5557;
+                                        font-weight: bold;
+                                    }
+                                    `}</style>
+                                    <Button bsStyle="custom"><Link to={routes.MALICIOUS}>View Alerts</Link></Button>
                                 </CardBody>
                             </Card>
                         </Col>
@@ -91,19 +74,31 @@ export default class DashboardActivity extends React.Component {
                                 </CardBody>
                             </Card>
                         </Col>
-                        
                     </Row>
                     <hr />
-                    <Row className="show-grid">
-                        <Col xs={12}>
+
+                    <Row className="show-grid" >
+                        <Col xs={12} md={4} py={2}>
                             <Card className="devices">
                                 <CardBody >
-                                    <NetworkUsage />    
+                                    <CardTitle><h3>Network Devices</h3></CardTitle>
+                                    <CardSubtitle className="sub">Overview of Devices on your network</CardSubtitle>
+                                </CardBody>
+                                <Image className="icon" src="./devices.png" height="120" width="120" />
+                                <CardBody>
+                                    <CardText><h4>You currently have <span><DevicesModal /> </span>devices on your network</h4></CardText>
+                                    <ThisModal />
                                 </CardBody>
                             </Card>
                         </Col>
+                        <Col xs={12} md={8} py={2}>
+                            <Card className="devices">
+                                <SpeedTest className="icon" />  
+                            </Card>                     
+                        </Col>
                         
                     </Row>
+                    
                 </Grid>
                 
             </div>

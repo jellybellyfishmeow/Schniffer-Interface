@@ -47,6 +47,9 @@ const NavigationNonAuth = () => (
       <NavItem eventKey={2}>
         <Link className="NavLink" to={routes.SIGN_IN}>Sign In</Link>
       </NavItem>
+      <NavItem eventKey={3}>
+        <Link className="NavLink" to={routes.SIGN_UP}>Sign Up</Link>
+      </NavItem>
       
     </Nav>
   </Navbar>
@@ -75,7 +78,7 @@ const NavigationAuth = () => (
             </Nav>
             <Nav pullRight>
               <NavItem eventKey={4}>
-                <Link className="NavLink" to={routes.ABOUT}>Best Practices</Link>
+                <Link className="NavLink" to={routes.BEST}>Best Practices</Link>
               </NavItem>
               <NavItem eventKey={5}>
                 <button className="btn log" onClick={() => firebase.auth().signOut().catch(err => alert(err.message))}>log out</button>

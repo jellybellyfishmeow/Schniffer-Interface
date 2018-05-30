@@ -7,7 +7,6 @@
   padding-bottom: 30px;
 
   margin-top: 50px;
-  background: #C0FFED;
 }
 .App-intro {
   font-size: large;
@@ -19,6 +18,9 @@ hr {
 p {
   font-size: 16px;
 }
+.welp {
+  background-color: #3C8F90
+}
 .aboutNav {
   background: rgb(243, 149, 125);
   font-family: 'Oxygen', sans-serif;
@@ -27,7 +29,7 @@ p {
 .devices {
   background: #71C2B2;
   padding: 20px 20px 20px 20px;
-
+  height: 450px;
 }
 
 .sub {
@@ -54,6 +56,11 @@ a {
 
 }
 
+.aboutButtons{
+  color: #B3E2CC;
+  margin-left: 10px;
+
+}
 .icon {
   display: block;
   margin-left: auto;
@@ -76,6 +83,7 @@ a {
   padding: 5px 5px 5px 5px;
   display:inline-block;
 }
+
 .table {
   background: #8FDEBC
 }
