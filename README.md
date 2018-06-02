@@ -9,5 +9,7 @@ To access this dashboard, simply type schniffer.local into any web browser that 
 
 Schniffer runs on the Kali Linux operating system. This choice was made due to the pre-configured network tools that are essential in cybersecurity. We leverage OpenVAS and Bro IDS because they are the leaders in open source vulnerability scanning and intrusion detection. 
 
+We used React.js for the front-end because we needed an interface that can handle the dynamic information that Bro IDS and Raspberry Pi will provide. The web interface needs to be able to display new information such as alerts as soon as they are received, which React handles perfectly.
+
 See the Schniffer in action:
 https://youtu.be/ZLT8tDjJTRg
